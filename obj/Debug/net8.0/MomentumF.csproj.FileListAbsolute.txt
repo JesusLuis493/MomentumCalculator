@@ -1,0 +1,14 @@
+/home/jesus/MomentumF/bin/Debug/net8.0/MomentumF
+/home/jesus/MomentumF/bin/Debug/net8.0/MomentumF.deps.json
+/home/jesus/MomentumF/bin/Debug/net8.0/MomentumF.runtimeconfig.json
+/home/jesus/MomentumF/bin/Debug/net8.0/MomentumF.dll
+/home/jesus/MomentumF/bin/Debug/net8.0/MomentumF.pdb
+/home/jesus/MomentumF/obj/Debug/net8.0/MomentumF.GeneratedMSBuildEditorConfig.editorconfig
+/home/jesus/MomentumF/obj/Debug/net8.0/MomentumF.AssemblyInfoInputs.cache
+/home/jesus/MomentumF/obj/Debug/net8.0/MomentumF.AssemblyInfo.cs
+/home/jesus/MomentumF/obj/Debug/net8.0/MomentumF.csproj.CoreCompileInputs.cache
+/home/jesus/MomentumF/obj/Debug/net8.0/MomentumF.dll
+/home/jesus/MomentumF/obj/Debug/net8.0/refint/MomentumF.dll
+/home/jesus/MomentumF/obj/Debug/net8.0/MomentumF.pdb
+/home/jesus/MomentumF/obj/Debug/net8.0/MomentumF.genruntimeconfig.cache
+/home/jesus/MomentumF/obj/Debug/net8.0/ref/MomentumF.dll
