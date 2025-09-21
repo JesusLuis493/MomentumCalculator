@@ -2,6 +2,14 @@ namespace Operations
 {
     internal class Create
     {
+        //clase de validacion 0
+        public void validacion(long n)
+        {
+            if (n == 0)
+            {
+                Console.WriteLine("[falla de validacion, {0} no puedes ser 0]", n);
+            }
+        }
         //componentes x and y de la fuerza ejercida
         public double CompX(long F, long A)
         {
