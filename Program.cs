@@ -30,6 +30,7 @@
                         long F, A;
                         Console.WriteLine("[ingrese fuerza ejercida (F)]");
                         F = long.Parse(Console.ReadLine());
+                        obj.validacion(F);
                         Console.WriteLine("[ingrese angulo respecto al eje X (A)]");
                         A = long.Parse(Console.ReadLine());
                         //resultados
@@ -56,6 +57,7 @@
                                     long H, A2;
                                     Console.WriteLine("[ingrese hipotenusa (H)]");
                                     H = long.Parse(Console.ReadLine());
+                                    obj.validacion(H);
                                     Console.WriteLine("[ingrese angulo respecto al eje X (A)]");
                                     A2 = long.Parse(Console.ReadLine());
                                     Console.WriteLine("[Componente en X de su fuerza es: {0} ]", obj.CompX(H, A2));
@@ -66,12 +68,16 @@
                                     Console.WriteLine("[Porfavor ingrese las medidas del mini-triangulo]");
                                     Console.WriteLine("[medida de hipotenusa]");
                                     hip1 = long.Parse(Console.ReadLine());
+                                    obj.validacion(hip1);
                                     Console.WriteLine("[medida de cateto opuesto]");
                                     catop = long.Parse(Console.ReadLine());
+                                    obj.validacion(catop);
                                     Console.WriteLine("[medida de cateto adyasente]");
                                     catad = long.Parse(Console.ReadLine());
+                                    obj.validacion(catad);
                                     Console.WriteLine("[ingresela fuerza]");
                                     Fh = long.Parse(Console.ReadLine());
+                                    obj.validacion(Fh);
                                     //resulucion
                                     Console.WriteLine("[el componente FX es igual a {0}]", obj.ComponeteX(Fh, catad, hip1));
                                     Console.WriteLine("[el componente FY es igual a {0}]", obj.ComponenteY(Fh, catop, hip1));
