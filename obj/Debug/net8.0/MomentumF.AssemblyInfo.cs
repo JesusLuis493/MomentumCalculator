@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MomentumF")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fc6f58d79fb1c4571d1bbf01f2d6e994599032a6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("MomentumF")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MomentumF")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
