@@ -13,33 +13,34 @@
             Console.WriteLine("[Proporcione los siguientes datos]");
             do
             {
-                Console.WriteLine("1. [Calcular Momentum X & Y]");
+                Console.WriteLine("1. [Calcular Momentum X & Y conociendo el angulo]");
                 Console.WriteLine("2. [Calcular componentes X & Y]");
+                Console.WriteLine("3. [Calcular Momentum X & Y conociendo componentes x & y de la fuerza]");
                 opc = int.Parse(Console.ReadLine());
                 switch (opc)
                 {
                     case 1:
-                        long dX, dY;
+                        double dX, dY;
                         Console.WriteLine("[Calcular Momentum X & Y]");
                         //distancia 
                         Console.WriteLine("[ingrese distancia en X (dX)]");
-                        dX = long.Parse(Console.ReadLine());
+                        dX = double.Parse(Console.ReadLine());
                         Console.WriteLine("[ingrese distancia en Y (dY)]");
-                        dY = long.Parse(Console.ReadLine());
+                        dY = double.Parse(Console.ReadLine());
                         //fuerza y angulo
-                        long F, A;
+                        double F, A;
                         Console.WriteLine("[ingrese fuerza ejercida (F)]");
-                        F = long.Parse(Console.ReadLine());
+                        F = double.Parse(Console.ReadLine());
                         obj.validacion(F);
                         Console.WriteLine("[ingrese angulo respecto al eje X (A)]");
-                        A = long.Parse(Console.ReadLine());
+                        A = double.Parse(Console.ReadLine());
                         //resultados
                         Console.WriteLine("[Resultados]");
                         Console.WriteLine("[Componente en X de su fuerza es: {0} ]", obj.CompX(F, A));
                         Console.WriteLine("[Componente en Y de su fuerza es: {0} ]", obj.CompY(F, A));
                         //momentum x and y
                         Console.WriteLine("[El momentum en X es: {0}] ", obj.MomentoX(dY, obj.CompX(F, A)));
-                        Console.WriteLine("[El momentum en Y es: {0}] ", obj.MomentoY(dX, obj.CompY(F, A)));
+                        Console.WriteLine("[El momentum en Y es: {0}] ", obj.MomentoY(dX, obj.CompY(F, A)));                        
                         break;
 
                     case 2:
@@ -54,29 +55,29 @@
                             switch (opc2)
                             {
                                 case 1:
-                                    long H, A2;
+                                    double H, A2;
                                     Console.WriteLine("[ingrese hipotenusa (H)]");
-                                    H = long.Parse(Console.ReadLine());
+                                    H = double.Parse(Console.ReadLine());
                                     obj.validacion(H);
                                     Console.WriteLine("[ingrese angulo respecto al eje X (A)]");
-                                    A2 = long.Parse(Console.ReadLine());
+                                    A2 = double.Parse(Console.ReadLine());
                                     Console.WriteLine("[Componente en X de su fuerza es: {0} ]", obj.CompX(H, A2));
                                     Console.WriteLine("[Componente en Y de su fuerza es: {0} ]", obj.CompY(H, A2));
                                     break;
                                 case 2:
-                                    long catad, catop, hip1, Fh;
+                                    double catad, catop, hip1, Fh;
                                     Console.WriteLine("[Porfavor ingrese las medidas del mini-triangulo]");
                                     Console.WriteLine("[medida de hipotenusa]");
-                                    hip1 = long.Parse(Console.ReadLine());
+                                    hip1 = double.Parse(Console.ReadLine());
                                     obj.validacion(hip1);
                                     Console.WriteLine("[medida de cateto opuesto]");
-                                    catop = long.Parse(Console.ReadLine());
+                                    catop = double.Parse(Console.ReadLine());
                                     obj.validacion(catop);
                                     Console.WriteLine("[medida de cateto adyasente]");
-                                    catad = long.Parse(Console.ReadLine());
+                                    catad = double.Parse(Console.ReadLine());
                                     obj.validacion(catad);
                                     Console.WriteLine("[ingresela fuerza]");
-                                    Fh = long.Parse(Console.ReadLine());
+                                    Fh = double.Parse(Console.ReadLine());
                                     obj.validacion(Fh);
                                     //resulucion
                                     Console.WriteLine("[el componente FX es igual a {0}]", obj.ComponeteX(Fh, catad, hip1));
@@ -92,7 +93,22 @@
                         } while (opc2 != 3);
                         break;
                     case 3:
-                        Console.WriteLine("[grasias por usar este sistema :)]");
+                        double disX, disY;
+                        Console.WriteLine("[Calcular Momentum X & Y]");
+                        //distancia 
+                        Console.WriteLine("[ingrese distancia en X (dX)]");
+                        disX = double.Parse(Console.ReadLine());
+                        Console.WriteLine("[ingrese distancia en Y (dY)]");
+                        disY = double.Parse(Console.ReadLine());
+                        //componentes
+                        double comX, comY;
+                        Console.WriteLine("[ingrese componete en X (dX)]");
+                        comX = double.Parse(Console.ReadLine());
+                        Console.WriteLine("[ingrese componente en Y (dY)]");
+                        comY = double.Parse(Console.ReadLine());
+                        //momentum x and y
+                        Console.WriteLine("[El momentum en X es: {0}] ", obj.MomentoX(disY, comX));
+                        Console.WriteLine("[El momentum en Y es: {0}] ", obj.MomentoY(disX, comY));                        
                         break;
                     default:
                         Console.WriteLine("[Opcion invalida]");
