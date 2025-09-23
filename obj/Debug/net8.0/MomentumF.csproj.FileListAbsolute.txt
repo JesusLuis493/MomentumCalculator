@@ -12,3 +12,4 @@
 /home/jesus/MomentumF/obj/Debug/net8.0/MomentumF.pdb
 /home/jesus/MomentumF/obj/Debug/net8.0/MomentumF.genruntimeconfig.cache
 /home/jesus/MomentumF/obj/Debug/net8.0/ref/MomentumF.dll
+/home/jesus/MomentumF/obj/Debug/net8.0/MomentumF.sourcelink.json
