@@ -17,6 +17,7 @@ Está escrito en **C#**, ejecutado desde la terminal con `dotnet run`, y estruct
 - ✅ Descomposición de fuerzas en componentes X y Y usando ángulo e hipotenusa.
 - ✅ Cálculo de momentum en X y Y usando distancias de palanca.
 - ✅ Alternativa para calcular componentes usando triángulos auxiliares.
+- ✅ Calculo del angulo de una fuerza usando sus componentes en X y Y.
 - ✅ Interfaz por consola clara y educativa.
 
 ---
