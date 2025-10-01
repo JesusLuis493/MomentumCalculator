@@ -42,5 +42,10 @@ namespace Operations
             double Fy = (Fh * ((double)catop / hip1));
             return (Fy);
         }
+        public double angulo (double Frx, double Fry)
+        {
+            double ang = Math.Atan(Fry / Frx) * (180 / Math.PI);
+            return (ang);
+        }
     }
 }
