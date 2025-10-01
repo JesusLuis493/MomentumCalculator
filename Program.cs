@@ -112,7 +112,7 @@
                         Console.WriteLine("[El momentum en X es: {0}] ", obj.MomentoX(disY, comX));
                         Console.WriteLine("[El momentum en Y es: {0}] ", obj.MomentoY(disX, comY));                        
                         break;
-                        case 4:
+                    case 4:
                         double Frx, Fry;
                         Console.WriteLine("[Calcular angulo de fuerza resultante]");
                         //componentes
@@ -123,11 +123,14 @@
                         //angulo
                         Console.WriteLine("[El angulo resultante de su fuerza es {0} grados]", obj.angulo(Frx, Fry));
                         break;
+                    case 5:
+                        Console.WriteLine("[bye bye]");
+                        break;
                     default:
                         Console.WriteLine("[Opcion invalida]");
                         break;
                 }
-            } while (opc != 3);
+            } while (opc != 5);
 
         }
     }
