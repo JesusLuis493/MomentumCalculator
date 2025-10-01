@@ -16,6 +16,8 @@
                 Console.WriteLine("1. [Calcular Momentum X & Y conociendo el angulo]");
                 Console.WriteLine("2. [Calcular componentes X & Y]");
                 Console.WriteLine("3. [Calcular Momentum X & Y conociendo componentes x & y de la fuerza]");
+                Console.WriteLine("4. [calcular angulo de furza resultante]");
+                Console.WriteLine("5. [Salir]");
                 opc = int.Parse(Console.ReadLine());
                 switch (opc)
                 {
@@ -109,6 +111,17 @@
                         //momentum x and y
                         Console.WriteLine("[El momentum en X es: {0}] ", obj.MomentoX(disY, comX));
                         Console.WriteLine("[El momentum en Y es: {0}] ", obj.MomentoY(disX, comY));                        
+                        break;
+                        case 4:
+                        double Frx, Fry;
+                        Console.WriteLine("[Calcular angulo de fuerza resultante]");
+                        //componentes
+                        Console.WriteLine("[Ingrese su componene en x de su furza resultante]");
+                        Frx = double.Parse(Console.ReadLine());
+                        Console.WriteLine("[Ingrese su componene en y de su furza resultante]");
+                        Fry = double.Parse(Console.ReadLine());
+                        //angulo
+                        Console.WriteLine("[El angulo resultante de su fuerza es {0} grados]", obj.angulo(Frx, Fry));
                         break;
                     default:
                         Console.WriteLine("[Opcion invalida]");
