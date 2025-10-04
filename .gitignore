@@ -1,0 +1,50 @@
+# Archivos de compilación
+*.exe
+*.dll
+*.pdb
+*.obj
+*.suo
+*.user
+*.userprefs
+*.cache
+*.pid
+*.log
+*.vspscc
+*.vssscc
+*.vsdpscc
+*.VC.db
+*.VC.VC.opendb
+*.VC.VC.db
+*.VC.VC.layout
+*.vsidx
+
+# Carpetas de compilación
+/bin
+/obj
+/packages
+_ReSharper.*
+
+# Archivos de Visual Studio
+.vs/
+*.csproj.user
+*.sln.docstates
+*.Build.cs
+*.tmp
+*.tmp_debug
+*.resharper.*
+
+# Archivos del sistema operativo
+[Bb]in/
+[Oo]bj/
+*.DS_Store
+Thumbs.db
+
+# Archivos de NuGet
+packages/
+*.nupkg
+*.snupkg
+*.nuspec
+
+# Otros
+*.swp
+*.lock
