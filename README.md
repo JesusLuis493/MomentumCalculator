@@ -45,7 +45,7 @@ MomentumCalculator/
 ├── LICENSE                
 ├── Program.cs         # Menú principal y flujo de ejecución           
 ├── Create.cs          # Lógica de cálculo de componentes y momentum        
-├── README.md          # Documentación del proyecto          
+└── README.md          # Documentación del proyecto          
 
 ---
 
