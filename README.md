@@ -38,88 +38,32 @@ Este proyecto refleja conocimientos adquiridos en cursos de Física General y Es
 
 ## 🧠 Motivación
 
-Como estudiante de Ingeniería en Sistemas Computacionales en el Instituto Tecnológico de México, Campus Nochistlán, desarrollé este proyecto personal para abordar una necesidad práctica en mis estudios de física. La motivación principal fue crear una herramienta confiable y rápida para validar cálculos manuales, reduciendo errores y tiempo invertido en operaciones matemáticas repetitivas. Este esfuerzo combina aprendizaje teórico con aplicación práctica, fomentando el desarrollo de habilidades en programación y resolución de problemas.
+Este proyecto fue creado **100% por mí** como estudiante del Instituto Tecnológico de México, Campus Nochistlán. Surge de la necesidad de tener una herramienta rápida y confiable para validar cálculos durante clases, tareas o prácticas. Está pensado para estudiantes que buscan **automatizar cálculos básicos sin depender de software complejo**.
 
-## 🔧 Requisitos Previos
+---
 
-- **Sistema Operativo**: Compatible con Windows, macOS o Linux.
-- **.NET SDK**: Versión 8.0 o superior. Descárgalo desde [dotnet.microsoft.com](https://dotnet.microsoft.com/download).
-- **Git**: Para clonar el repositorio (opcional, pero recomendado).
+## 📂 Estructura del proyecto
 
-## 🚀 Instalación
+MomentumCalculator/            
+├── .github/workflow   # Aloja el workflow .yml             
+│    └── dotnet.yml                                 
+├── bin/Debug/net8.0                                             
+│   ├── MomentumF                                             
+│   ├── MomentumF.deps.json                                         
+│   ├── MomentumF.dll                                      
+│   ├── MomentumF.pdb                                          
+│   └── MomentumF.runtimeconfig.json                          
+├── obj                                                        
+│   └── Debug/net8.0                              
+├── .gitignore                  
+├── LICENSE                
+├── Program.cs         # Menú principal y flujo de ejecución           
+├── Create.cs          # Lógica de cálculo de componentes y momentum        
+├── README.md          # Documentación del proyecto          
 
-1. **Clona el repositorio**:
-   ```bash
-   git clone https://github.com/JesusLuis493/MomentumCalculator.git
-   cd MomentumCalculator
-   ```
+---
 
-2. **Restaura las dependencias**:
-   ```bash
-   dotnet restore
-   ```
-
-3. **Compila el proyecto** (opcional, ya que `dotnet run` lo hace automáticamente):
-   ```bash
-   dotnet build
-   ```
-
-## 📖 Uso
-
-Ejecuta la aplicación desde la terminal:
-
-```bash
-dotnet run
-```
-
-La aplicación presenta un menú interactivo con las siguientes opciones:
-
-1. **Descomposición de Fuerzas**: Ingresa magnitud y ángulo para obtener componentes X e Y.
-2. **Cálculo de Momentum**: Proporciona masa, velocidad y distancia de palanca.
-3. **Triángulos Auxiliares**: Utiliza geometría para cálculos alternativos.
-4. **Determinación de Ángulos**: Calcula ángulo a partir de componentes.
-
-Sigue las instrucciones en pantalla para ingresar datos y obtener resultados. La aplicación valida entradas y proporciona retroalimentación educativa.
-
-### Ejemplo de Salida
-
-```
-Bienvenido a MomentumCalculator
-Selecciona una opción:
-1. Descomponer fuerza
-2. Calcular momentum
-3. Usar triángulo auxiliar
-4. Calcular ángulo
-5. Salir
-
-Opción: 1
-Ingresa la magnitud de la fuerza: 100
-Ingresa el ángulo en grados: 30
-
-Componente X: 86.60
-Componente Y: 50.00
-```
-
-## 📂 Estructura del Proyecto
-
-```
-MomentumCalculator/
-├── .github/
-│   └── workflows/
-│       └── dotnet.yml          # Configuración de CI/CD con GitHub Actions
-├── bin/
-│   └── Debug/net8.0/           # Archivos compilados (generados automáticamente)
-├── obj/                        # Archivos de objeto (generados automáticamente)
-├── .gitignore                  # Archivos ignorados por Git
-├── LICENSE                     # Licencia del proyecto
-├── MomentumF.csproj            # Archivo de proyecto .NET
-├── MomentumF.sln               # Solución de Visual Studio
-├── Operaciones.cs              # Lógica de cálculos matemáticos y físicos
-├── Program.cs                  # Punto de entrada y menú principal
-└── README.md                   # Esta documentación
-```
-
-## 🛠️ Tecnologías Utilizadas
+## 🧰 Tecnologías utilizadas
 
 - **Lenguaje de Programación**: C# 12.0
 - **Framework**: .NET 8.0 (SDK)
