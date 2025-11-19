@@ -107,3 +107,13 @@ Apasionado por el desarrollo de software, DevOps, scripting y la accesibilidad t
 - **Correo Electrónico**: [jemanuelluisandoval@gmail.com]
 
 ---
+
+
+## 🚀 Ejecución
+
+Para correr el programa desde la terminal:
+
+```bash
+dotnet run```
+
+📌 Nota: Este README fue redactado con apoyo de inteligencia artificial para estructurar y comunicar mejor el propósito técnico y educativo del proyecto. Todo el contenido ha sido revisado y validado por el autor.
