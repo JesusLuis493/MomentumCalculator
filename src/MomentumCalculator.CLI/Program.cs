@@ -1,6 +1,7 @@
 ﻿namespace Myapp
 {
     using System.Diagnostics;
+     using MomentumCalculator.CORE
     using Operations;
     internal class Program
     {
@@ -134,4 +135,5 @@
 
         }
     }
+
 }
