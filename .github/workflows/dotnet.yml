@@ -16,6 +16,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
@@ -25,7 +26,7 @@ jobs:
       run: dotnet restore MomentumF.sln
       
     - name: Build
-      run: dotnet build MomentumF.sln
+      run: dotnet build /src/MomentumCalculator.CLI/MomentumF.csproj
       
     - name: Test
       run: dotnet test --no-build --verbosity normal
