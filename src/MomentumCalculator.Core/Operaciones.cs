@@ -1,6 +1,6 @@
 namespace Operations
 {
-    internal class Create
+    public class Create
     {
         //clase de validacion 0
         public void validacion(double n)
