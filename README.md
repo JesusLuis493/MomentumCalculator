@@ -44,7 +44,7 @@ Este proyecto fue creado **100% por mí** como estudiante del Instituto Tecnoló
 
 ## 📂 Estructura del proyecto
 
-MomentumCalculator/            
+```MomentumCalculator/            
 ├── .github/workflow   # Aloja el workflow .yml             
 │    └── dotnet.yml                                 
 ├── bin/Debug/net8.0                                             
@@ -60,6 +60,7 @@ MomentumCalculator/
 ├── Program.cs         # Menú principal y flujo de ejecución           
 ├── Create.cs          # Lógica de cálculo de componentes y momentum        
 └── README.md          # Documentación del proyecto          
+```
 
 ---
 
