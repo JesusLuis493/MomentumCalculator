@@ -2,6 +2,7 @@
 {
     using System.Diagnostics;
     using Operations;
+    using MomentumCalculator.Core;
     internal class Program
     {
         static void Main(string[] args)

@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <itemGroup>
+    <ProjectReference Include="..\MomentumCalculator.Core\MomentumCalculator.Core.csproj" />
+  </itemGroup>
+  
 </Project>
