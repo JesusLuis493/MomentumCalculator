@@ -9,11 +9,10 @@ Proyecto educativo desarrollado en C# para simplificar cálculos físicos básic
 ## 📋 Tabla de Contenidos
 
 - [Descripción](#-descripción)
-- [Características](#-características)
+- [Características](#-Características)
 - [Motivación](#-motivación)
 - [Requisitos Previos](#-requisitos-previos)
 - [Instalación](#-instalación)
-- [Uso](#-uso)
 - [Estructura del Proyecto](#-estructura-del-proyecto)
 - [Tecnologías Utilizadas](#-tecnologías-utilizadas)
 - [Contribuciones](#-contribuciones)
@@ -39,6 +38,44 @@ Este proyecto refleja conocimientos adquiridos en cursos de Física General y Es
 ## 🧠 Motivación
 
 Este proyecto fue creado **100% por mí** como estudiante del Instituto Tecnológico de México, Campus Nochistlán. Surge de la necesidad de tener una herramienta rápida y confiable para validar cálculos durante clases, tareas o prácticas. Está pensado para estudiantes que buscan **automatizar cálculos básicos sin depender de software complejo**.
+
+---
+
+## 📋 Requisitos Previos
+
+Antes de empezar, asegúrate de tener:
+
+- **Sistema Operativo:** Linux, macOS o Windows
+- **.NET SDK 8.0+** - [Descargar](https://dotnet.microsoft.com/download)
+- **Git** - [Descargar](https://git-scm.com/)
+- **Editor:** Visual Studio Code o Visual Studio
+- **Terminal:** PowerShell, Bash o Zsh
+
+**Verifica instalación:**
+```bash
+dotnet --version
+git --version
+```
+## 🚀 Instalación
+
+***1. Clona el Repositorio***
+``` bash
+git clone https://github.com/JesusLuis493/MomentumCalculator.git
+cd MomentumCalculator
+```
+
+***2. Abre en Codespaces o Local***
+
+Opción A: Codespaces (Recomendado)
+```bash
+# GitHub abre automáticamente el ambiente
+# En el navegador: github.dev/...
+```
+
+Opción B: Local
+```bash
+code .  # Abre en Visual Studio Code
+```
 
 ---
 
