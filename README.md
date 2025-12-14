@@ -13,7 +13,6 @@ Proyecto educativo desarrollado en C# para simplificar cálculos físicos básic
 - [Motivación](#-motivación)
 - [Requisitos Previos](#-requisitos-previos)
 - [Instalación](#-instalación)
-- [Uso](#-uso)
 - [Estructura del Proyecto](#-estructura-del-proyecto)
 - [Tecnologías Utilizadas](#-tecnologías-utilizadas)
 - [Contribuciones](#-contribuciones)
