@@ -10,6 +10,7 @@ namespace Operations
                 Console.WriteLine("[falla de validacion, {0} no puedes ser 0]", n);
             }
         }
+
         //componentes x and y de la fuerza ejercida
         public double CompX(double F, double A)
         {
@@ -21,6 +22,7 @@ namespace Operations
             double Fy = F * Math.Sin(A * Math.PI / 180);
             return (Fy);
         }
+
         //momentum
         public double MomentoX(double dY, double Fx)
         {
@@ -30,6 +32,7 @@ namespace Operations
         {
             return (Fy * dX);
         }
+
         //Calculo por medio de triangulo
         public double ComponeteX(double Fh, double catad, double hip1)
         {
