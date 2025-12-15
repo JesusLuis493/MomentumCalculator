@@ -1,5 +1,6 @@
 # MomentumCalculator 🧮
 
+[![Build & test .NET app](https://github.com/JesusLuis493/MomentumCalculator/workflows/Build%20&%20test%20.NET%20app/badge.svg)](https://github.com/JesusLuis493/MomentumCalculator/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![.NET](https://img.shields.io/badge/.NET-8.0-blue.svg)](https://dotnet.microsoft.com/)
 [![C#](https://img.shields.io/badge/C%23-12.0-purple.svg)](https://docs.microsoft.com/en-us/dotnet/csharp/)
