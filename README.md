@@ -142,7 +142,7 @@ Apasionado por el desarrollo de software, DevOps, scripting y la accesibilidad t
 ## 📞 Contacto
 
 - **GitHub**: [JesusLuis493](https://github.com/JesusLuis493)
-- **Correo Electrónico**: [jemanuelluisandoval@gmail.com]
+- **Correo Electrónico**: [jesusluis.dev@gmail.com]
 
 ---
 
