@@ -98,7 +98,6 @@ code .  # Abre en Visual Studio Code
 ├── Program.cs         # Menú principal y flujo de ejecución           
 ├── Create.cs          # Lógica de cálculo de componentes y momentum        
 └── README.md          # Documentación del proyecto          
-```
 
 ---
 
