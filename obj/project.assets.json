@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/home/jesus/.nuget/packages/": {}
+    "/home/codespace/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/jesus/MomentumF/MomentumF.csproj",
+      "projectUniqueName": "/workspaces/MomentumCalculator/MomentumF.csproj",
       "projectName": "MomentumF",
-      "projectPath": "/home/jesus/MomentumF/MomentumF.csproj",
-      "packagesPath": "/home/jesus/.nuget/packages/",
-      "outputPath": "/home/jesus/MomentumF/obj/",
+      "projectPath": "/workspaces/MomentumCalculator/MomentumF.csproj",
+      "packagesPath": "/home/codespace/.nuget/packages/",
+      "outputPath": "/workspaces/MomentumCalculator/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/jesus/.nuget/NuGet/NuGet.Config"
+        "/home/codespace/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -38,6 +38,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -59,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.120/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.412/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
