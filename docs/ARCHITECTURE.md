@@ -41,9 +41,10 @@ MomentumCalculator/
 │       │   └── MomentumController.cs
 │       └── Startup.cs
 │
-├── tests/                              # Pruebas unitarias
+├── test/                              # Pruebas unitarias
 │   └── MomentumCalculator.Tests/
 │       ├── MomentumCalculator.Tests.csproj
+│       ├── Unit_Tests.cs               # Test unitarios 
 │       ├── OperacionesTests.cs         # Tests de lógica
 │       └── IntegrationTests.cs         # Tests de integración (futuro)
 │
@@ -137,19 +138,22 @@ public class CalculationResult
 
 #### **OperacionesTests.cs**
 ```csharp
-[Fact]
-public void CalculateComponentX_WithValidInput_ReturnsExpectedValue()
+[Clase de Prueba]
+Pruebas de clase pública Operaciones
 {
-    // Arrange
-    ICalculator calculator = new Operaciones();
-    
-    // Act
-    var result = calculator.CalculateComponentX(10, 45);
-    
-    // Assert
-    Assert.True(result.Success);
-    Assert.Equal(7.07, result.Value, 2); // 2 decimales de precisión
-}
+    [Método de prueba]
+    public void CalculateComponentX_WithValidInput_ReturnsExpectedValue()
+    {
+        // Organizar
+        Calculadora ICalculadora = nuevo Operaciones();
+        
+        // Actuar
+        var resultado = calculator.CalculateComponentX(10, 45);
+        
+        // Afirmar
+        Assert.IsTrue(result.Success);
+        Assert.AreEqual(7.07, result.Value, 2); // 2 decimales de precisión
+    }
 ```
 
 **Características:**
