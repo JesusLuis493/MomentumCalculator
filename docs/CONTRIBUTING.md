@@ -84,7 +84,7 @@ Edita el código. Ejemplos:
 vim src/MomentumCalculator.Core/Operaciones.cs
 
 # Agregar test
-vim tests/MomentumCalculator.Tests/OperacionesTests.cs
+vim test/MomentumCalculator.Tests/OperacionesTests.cs
 ```
 
 ***Paso 3: Commitea Cambios***
@@ -511,7 +511,7 @@ bash
 vim src/MomentumCalculator.Core/Operaciones.cs
 
 # Agregar test
-vim tests/MomentumCalculator.Tests/OperacionesTests.cs
+vim test/MomentumCalculator.Tests/OperacionesTests.cs
 
 Paso 3: Commitea Cambios
 bash
@@ -570,40 +570,40 @@ Requisitos de Testing
     ✅ Todos los tests PASAN (green)
     ✅ Sin warnings en build
 
-Escribir un Test (Ejemplo)
+Escribe un Test (Ejemplo)
 C#
 
 // tests/MomentumCalculator.Tests/OperacionesTests.cs
-using Xunit;
-using MomentumCalculator.Core;
+Uso de Xunit;
+Uso de MomentumCalculator.Core;
 
-public class OperacionesTests
+Pruebas de clase pública Operaciones
 {
-    [Fact]
-    public void CalculateComponentX_WithValidInput_ReturnsSuccess()
+    [Hecho]
+    public void CalcularComponentX_WithValidInput_ReturnsSuccess()
     {
-        // Arrange
-        ICalculator calculator = new Operaciones();
-        
-        // Act
-        var result = calculator.CalculateComponentX(10, 45);
-        
-        // Assert
+        // Organizar
+        Calculadora ICalculadora = nuevo Operaciones();
+
+        // Actuar
+        var resultado = calculator.CalculateComponentX(10, 45);
+
+        // Afirmar
         Assert.True(result.Success);
         Assert.Equal(7.07, result.Value, 2);
-        Assert.Equal("N", result.Unit);
+        Assert.Equal("N", resultado.Unidad);
     }
-    
-    [Fact]
-    public void CalculateComponentX_WithZeroForce_ReturnsFail()
+
+    [Hecho]
+    public void CalcularComponentX_WithZeroForce_DevolucionesFail()
     {
-        // Arrange
-        ICalculator calculator = new Operaciones();
-        
-        // Act
-        var result = calculator.CalculateComponentX(0, 45);
-        
-        // Assert
+        // Organizar
+        Calculadora ICalculadora = nuevo Operaciones();
+
+        // Actuar
+        resultado var = calculator.CalculateComponentX(0, 45);
+
+        // Afirmar
         Assert.False(result.Success);
         Assert.Contains("error", result.Message.ToLower());
     }
