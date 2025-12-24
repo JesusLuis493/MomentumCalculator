@@ -90,13 +90,23 @@ code .  # Abre en Visual Studio Code
 │   ├── MomentumF.deps.json                                         
 │   ├── MomentumF.dll                                      
 │   ├── MomentumF.pdb                                          
-│   └── MomentumF.runtimeconfig.json                          
+│   └── MomentumF.runtimeconfig.json
+├── docs
+│   ├── ARCHITECTURE.md
+│   ├── CONTRIBUTING.md
+│   └── TECHNICAL_NOTES.md
 ├── obj                                                        
-│   └── Debug/net8.0                              
-├── .gitignore                  
+│   └── Debug/net8.0
+├── src/
+│   ├── MomemtumCalculator.CLI
+│   │   └── Program.cs         # Menú principal            
+│   └── MomemtumCalculator.CORE
+│       └── Operaciones.cs          # Lógica de cálculo de componentes y momentum
+├── test/MomentumCalculator.Tests
+│   └── Unit_tests.cs
+├── .gitignore
+├── MomentumF.sln               
 ├── LICENSE                
-├── Program.cs         # Menú principal y flujo de ejecución           
-├── Create.cs          # Lógica de cálculo de componentes y momentum        
 └── README.md          # Documentación del proyecto          
 ``` 
 ---
@@ -105,7 +115,7 @@ code .  # Abre en Visual Studio Code
 
 - **Lenguaje de Programación**: C# 12.0
 - **Framework**: .NET 8.0 (SDK)
-- **Entorno de Desarrollo**: Visual Studio Code en Linux Mint
+- **Entorno de Desarrollo**: Visual Studio Code en Linux base Debian
 - **Control de Versiones**: Git
 - **CI/CD**: GitHub Actions (workflow básico para compilación y pruebas)
 
@@ -152,6 +162,6 @@ Apasionado por el desarrollo de software, DevOps, scripting y la accesibilidad t
 Para correr el programa desde la terminal:
 
 ```bash
-dotnet run```
+dotnet run
+```
 
-📌 Nota: Este README fue redactado con apoyo de inteligencia artificial para estructurar y comunicar mejor el propósito técnico y educativo del proyecto. Todo el contenido ha sido revisado y validado por el autor.
