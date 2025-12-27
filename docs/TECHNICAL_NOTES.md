@@ -76,9 +76,70 @@ public double MomentoX(double dY, double Fx)
 **Validaciones Necesarias:**
 - ❌ dY no puede ser 0 (sin distancia, sin momentum)
 
+--- 
+
+### 4. Cálculo de Momentum (MomentoY)
+
+**Fórmula:** `My = Fy × dX`
+
+```csharp
+public double MomentoY(double dX, double Fy)
+{
+    return Fy * dX;
+}
+```
+
+**Explicación:**
+- `Fy` = Componente de fuerza en Y
+- `dX` = Distancia de palanca en X
+- Momentum (torque) = Fuerza × Distancia perpendicular
+
+**Validaciones Necesarias:**
+- ❌ dX no puede ser 0 (sin distancia, sin momentum)
+
 ---
 
-### 4. Cálculo de Ángulo Resultante
+### 5. Cálculo de Componente X (A partir de otro triangulo)
+
+**Fórmula:** ` Fx = (Fh * (catad / hip1))`
+
+```csharp
+public double ComponeteX(double Fh, double catad, double hip1) 
+{
+    double Fx = (Fh * ((double)catad / hip1));
+    return (Fx);
+}
+```
+
+**Explicación:**
+- `Fx`= Componente de fueerza en X
+- `Fh`= Hipotenusa del triangulo de referencia (generalmente una fuerza)
+- `catad`= Cateto adyasente
+- `hip1`= Hipotenusa del triangulo
+
+--- 
+
+### 6. Cálculo de Componente Y (A partir de otro triangulo)
+
+**Fórmula:** ` Fy = (Fh * (catop / hip1))`
+
+```csharp
+public double ComponeteX(double Fh, double catop, double hip1) 
+{
+    double Fy = (Fh * ((double)catop / hip1));
+    return (Fy);
+}
+```
+
+**Explicación:**
+- `Fy`= Componente de fueerza en Y
+- `Fh`= Hipotenusa del triangulo de referencia (generalmente una fuerza)
+- `catop`= Cateto opuesto
+- `hip1`= Hipotenusa del triangulo
+
+--- 
+
+### 7. Cálculo de Ángulo Resultante
 
 **Fórmula:** `A = arctan(Fy / Fx) × 180/π`
 
