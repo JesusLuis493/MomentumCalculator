@@ -10,7 +10,7 @@ Proyecto educativo desarrollado en C# para simplificar cálculos físicos básic
 ## 📋 Tabla de Contenidos
 
 - [Descripción](#-descripción)
-- [Características](#-Características)
+- [Características](#-caracteristicas)
 - [Motivación](#-motivación)
 - [Requisitos Previos](#-requisitos-previos)
 - [Instalación](#-instalación)
@@ -82,32 +82,30 @@ code .  # Abre en Visual Studio Code
 
 ## 📂 Estructura del proyecto
 
-```MomentumCalculator/            
-├── .github/workflow   # Aloja el workflow .yml             
-│    └── dotnet.yml                                 
-├── bin/Debug/net8.0                                             
-│   ├── MomentumF                                             
-│   ├── MomentumF.deps.json                                         
-│   ├── MomentumF.dll                                      
-│   ├── MomentumF.pdb                                          
-│   └── MomentumF.runtimeconfig.json
-├── docs
-│   ├── ARCHITECTURE.md
-│   ├── CONTRIBUTING.md
-│   └── TECHNICAL_NOTES.md
-├── obj                                                        
-│   └── Debug/net8.0
-├── src/
-│   ├── MomemtumCalculator.CLI
-│   │   └── Program.cs         # Menú principal            
-│   └── MomemtumCalculator.CORE
-│       └── Operaciones.cs          # Lógica de cálculo de componentes y momentum
-├── test/MomentumCalculator.Tests
-│   └── Unit_tests.cs
-├── .gitignore
-├── MomentumF.sln               
-├── LICENSE                
-└── README.md          # Documentación del proyecto          
+```
+MomentumCalculator/                     # Documentación principalMomentumCalculator/
+├── .github/
+│   └── workflows/
+│       └── dotnet.yml                  # Pipeline de CI/CD (GitHub Actions)
+├── docs/                               # Documentación técnica
+│   ├── ARCHITECTURE.md                 # Este archivo
+│   ├── CONTRIBUTING.md                 # Guía para contribuidores
+│   ├── CURRENT_STATES.md               # Estado del proyecto durante la refactorizacion
+│   └── TECHNICAL_NOTES.md              # Análisis de algoritmos y optimizaciones
+├── src/                                # Código fuente
+│   ├── MomentumCalculator.Core/        # ⭐ Lógica de negocio pura
+│   │   ├── MomentumCalculator.Core.csproj
+│   │   └── Operaciones.cs              # Clase principal con algoritmos
+│   └── MomentumCalculator.CLI/         # Interfaz por línea de comandos
+│       ├── MomentumCalculator.CLI.csproj
+│       └── Program.cs                  # Menús y entrada de usuario
+├── test/                              # Pruebas unitarias
+│   └── MomentumCalculator.Tests/
+│       └── Unit_Tests.cs               # Test unitarios 
+├── .gitignore                          # Archivos ignorados por Git
+├── LICENSE                             # Licencia MIT
+├── MomentumCalculator.sln              # Solución que agrupa todos los proyectos
+└── README.md                           # Documentación principal         
 ``` 
 ---
 
