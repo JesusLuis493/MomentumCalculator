@@ -4,7 +4,7 @@
 
 ### 1. Cálculo de Componentes en X (CompX)
 
-**Fórmula:** `Fx = F × cos(A°)`
+**Fórmula:** `Fuerza en x = Fuerza × coseno(Angulo°)`
 
 ```csharp
 public double CompX(double F, double A)
@@ -33,7 +33,7 @@ public double CompX(double F, double A)
 
 ### 2. Cálculo de Componentes en Y (CompY)
 
-**Fórmula:** `Fy = F × sin(A°)`
+**Fórmula:** `Fuerza en y = Fuerza × seno(Angulo°)`
 
 ```csharp
 public double CompY(double F, double A)
@@ -55,7 +55,7 @@ public double CompY(double F, double A)
 
 ### 3. Cálculo de Momentum (MomentoX)
 
-**Fórmula:** `Mx = Fx × dY`
+**Fórmula:** `Momentum en x = Fuerza en x × distancia en Y`
 
 ```csharp
 public double MomentoX(double dY, double Fx)
@@ -80,7 +80,7 @@ public double MomentoX(double dY, double Fx)
 
 ### 4. Cálculo de Momentum (MomentoY)
 
-**Fórmula:** `My = Fy × dX`
+**Fórmula:** `Momentum en y = Fuerza en y × distancia en X`
 
 ```csharp
 public double MomentoY(double dX, double Fy)
@@ -101,7 +101,7 @@ public double MomentoY(double dX, double Fy)
 
 ### 5. Cálculo de Componente X (A partir de otro triangulo)
 
-**Fórmula:** ` Fx = (Fh * (catad / hip1))`
+**Fórmula:** ` Fuerza en x = (Fuerza o hipotenusa del triangulo de referencia * (cateto adyasente / hipotenusa))`
 
 ```csharp
 public double ComponeteX(double Fh, double catad, double hip1) 
@@ -121,7 +121,7 @@ public double ComponeteX(double Fh, double catad, double hip1)
 
 ### 6. Cálculo de Componente Y (A partir de otro triangulo)
 
-**Fórmula:** ` Fy = (Fh * (catop / hip1))`
+**Fórmula:** ` Fuerza en y = (Fuerza o hipotenusa del triangulo de referencia * (cateto opuesto / hipotenusa))`
 
 ```csharp
 public double ComponeteX(double Fh, double catop, double hip1) 
@@ -141,7 +141,7 @@ public double ComponeteX(double Fh, double catop, double hip1)
 
 ### 7. Cálculo de Ángulo Resultante
 
-**Fórmula:** `A = arctan(Fy / Fx) × 180/π`
+**Fórmula:** `angulo = Tangente^-1(Fuerza en y / Fuerza en x)`
 
 ```csharp
 public double angulo(double Frx, double Fry)
@@ -153,6 +153,7 @@ public double angulo(double Frx, double Fry)
 
 **Explicación:**
 - `Atan()` = Arcotangente (inversa de tangente)
+- `180/π` = cinversion de radianes a grados
 - Calcula el ángulo a partir de componentes X e Y
 - Conversión radianes a grados
 
