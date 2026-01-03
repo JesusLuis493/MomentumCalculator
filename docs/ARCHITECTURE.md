@@ -2,7 +2,7 @@
 
 ## Visión General
 
-MomentumCalculator está diseñado siguiendo principios **SOLID** y separación de capas para permitir:
+MomentumCalculator está diseñado siguiendo separación por capas para permitir:
 - ✅ Reutilización de código en múltiples interfaces (CLI, API, tests)
 - ✅ Testing fácil y rápido
 - ✅ Escalabilidad y mantenimiento
@@ -20,6 +20,8 @@ MomentumCalculator/
 │       └── ci-cd.yml                   # Pipeline de CI/CD (GitHub Actions)
 ├── docs/                               # Documentación técnica
 │   ├── ARCHITECTURE.md                 # Este archivo
+│   ├── CONTRIBUTING.md                 # Guía para contribuidores
+│   ├── CURRENT_STATES.md               # Estado del proyecto durante la refactorizacion
 │   ├── TECHNICAL_NOTES.md              # Análisis de algoritmos y optimizaciones
 │   └── API_DESIGN.md                   # Diseño de endpoints (futuro)
 ├── src/                                # Código fuente
@@ -50,8 +52,7 @@ MomentumCalculator/
 │
 ├── .gitignore                          # Archivos ignorados por Git
 ├── LICENSE                             # Licencia MIT
-├── README.md                           # Documentación principal
-└── CONTRIBUTING.md                     # Guía para contribuidores
+└── README.md                           # Documentación principal
 ```
 
 ---
@@ -328,9 +329,3 @@ MomentumCalculator.sln (Solución)
 | 5 | +2h | CI/CD | ⏳ Por hacer |
 
 ---
-
-## 📚 Referencias
-
-- [SOLID Principles](https://en.wikipedia.org/wiki/SOLID)
-- [Dependency Injection](https://en.wikipedia.org/wiki/Dependency_injection)
-- [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
