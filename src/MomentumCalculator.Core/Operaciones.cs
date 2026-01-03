@@ -10,16 +10,19 @@ namespace Operations
                 Console.WriteLine("[falla de validacion, {0} no puedes ser 0]", n);
             }
         }
+        // constantes de conversion de angulos a radianes
+        private const double DEG_TO_RAD = Math.PI / 180;
+        private const double RAD_TO_DEG = 180 / Math.PI;
         
         //componentes x & y de la fuerza ejercida
         public double CompX(double F, double A) //fuerza ejercida en el eje x
         {
-            double Fx = F * Math.Cos(A * Math.PI / 180);
+            double Fx = F * Math.Cos(A * DEG_TO_RAD);
             return (Fx);
         }
         public double CompY(double F, double A) //fuerza ejercida en el eje y
         {
-            double Fy = F * Math.Sin(A * Math.PI / 180);
+            double Fy = F * Math.Sin(A * DEG_TO_RAD);
             return (Fy);
         }
         
@@ -47,7 +50,7 @@ namespace Operations
         }
         public double angulo (double Frx, double Fry) //calculo para optener el angulo
         {
-            double ang = Math.Atan(Fry / Frx) * (180 / Math.PI);
+            double ang = Math.Atan(Fry / Frx) * (RAD_TO_DEG);
             return (ang);
         }
     }
