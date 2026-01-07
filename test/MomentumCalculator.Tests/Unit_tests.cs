@@ -1,3 +1,4 @@
+using Xunit;
 namespace Tests
 {
     using Operations;
@@ -6,6 +7,7 @@ namespace Tests
     {
         // Verificasion de comportamiento del metodo Validacion de Operations.cs
         [TestMethod]
+        [Trait("Category", "Unit")]
         public void TestMethod_Validacion_input0()
         {
             double result = Operations.Validacion("1234567890");
@@ -14,6 +16,7 @@ namespace Tests
 
         // Verificasion del metodo CompX de Operations.cs
         [TestMethod]
+        [Trait("Category", "Unit")]
         public void TestMethod_CompX_correctCalculo()
         {
             double result = Operations.CompX(600, 30);
@@ -21,6 +24,7 @@ namespace Tests
         }
         // Verificasion del metodo CompY de Operations.cs
         [TestMethod]
+        [Trait("Category", "Unit")]
         public void TestMethod_CompY_correctCalculo()
         {
             double result = Operations.CompY(600, 30);
@@ -29,6 +33,7 @@ namespace Tests
 
         // verificasion del metodo momentoX de Operations.cs
         [TestMethod]
+        [Trait("Category", "Unit")]
         public void TestMethod_MomentoX_correctCalculo()
         {
             double result = Operations.MomentoX(80, 2);
@@ -37,6 +42,7 @@ namespace Tests
 
         // Verificasion del metodo momentoY de Operations.cs
         [TestMethod]
+        [Trait("Category", "Unit")]
         public void TestMethod_MomentoY_correctCalculo()
         {
             double result = Operations.MomentoY(60, 5);
@@ -45,6 +51,7 @@ namespace Tests
 
         // verficasion del metodo ComponenteX de Operations.cs
         [TestMethod]
+        [Trait("Category", "Unit")]
         public void TestMethod_ComponenteX_correctCalculo()
         {
             double result = Operations.ComponenteX(600, 3, 5);
@@ -53,6 +60,7 @@ namespace Tests
 
         // verficasion del metodo ComponenteY de Operations.cs
         [TestMethod]
+        [Trait("Category", "Unit")]
         public void TestMethod_ComponenteY_correctCalculo()
         {
             double result = Operations.ComponenteY(600, 4, 5);
@@ -61,6 +69,7 @@ namespace Tests
 
         // verficasion del metodo Angulo de Operations.cs
         [TestMethod]
+        [Trait("Category", "Unit")]
         public void TestMethod_Angulo_correctCalculo()
         {
             double result = Operations.Angulo(60, 80);
