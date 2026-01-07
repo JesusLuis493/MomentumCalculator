@@ -27,8 +27,8 @@ jobs:
     - name: Run Test Suite
       id: tests
       run: |
-        chmod +x tests/scripts/run-test-suite.sh
-        ./tests/scripts/run-test-suite.sh
+        chmod +x tests/scripts/suite_testing.sh
+        ./tests/scripts/suite_testing.sh
       continue-on-error: true
 
     - name: Upload Test Results
