@@ -26,9 +26,7 @@ jobs:
       
     - name: Run Test Suite
       id: tests
-      run: |
-        chmod +x tests/scripts/suite_testing.sh
-        ./tests/scripts/suite_testing.sh
+      run: dotnet test MomentumF.sln
       continue-on-error: true
 
     - name: Upload Test Results
