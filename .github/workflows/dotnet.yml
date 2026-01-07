@@ -1,45 +1,59 @@
-# This workflow will build a .NET project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
-
 name: Build & test .NET app
 
 on:
   push:
     branches: [ "main", "develop" ]
-  pull_request:
+  pull_request: 
     branches: [ "main", "develop" ]
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+    runs-on:  ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - uses:  actions/checkout@v4
     
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 8.0.x
+        dotnet-version:  8.0.x
         
     - name: Restore dependencies
       run: dotnet restore MomentumF.sln
       
     - name: Build
-      run: dotnet build src/MomentumCalculator.CLI/MomentumF.csproj
+      run: dotnet build src/MomentumCalculator.CLI/MomentumF.csproj --no-restore
       
-    - name: Testg
+    - name: Run Test Suite
       id: tests
       run: |
-      chmod +x tests/scripts/run-test-suite.sh
-      ./tests/scripts/run-test-suite.sh
+        chmod +x tests/scripts/run-test-suite.sh
+        ./tests/scripts/run-test-suite.sh
       continue-on-error: true
 
-    - name: Check Results
+    - name: Upload Test Results
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name:  test-results
+        path: |
+          **/TestResults/**/*. trx
+          **/TestResults/**/*.xml
+        retention-days: 30
+
+    - name: Test Summary
+      if: always()
       run: |
-      if [ ${{ steps.tests.outputs.exit_code }} -eq 2 ]; then
-      echo "Catastrófico: Todos los tests fallaron"
-      fi
+        if [ "${{ steps.tests.outcome }}" == "success" ]; then
+          echo "✅ Todos los tests pasaron" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "❌ Algunos tests fallaron.  Revisa los artefactos." >> $GITHUB_STEP_SUMMARY
+        fi
       
     - name: Build (Release)
+      if: success()
       run: dotnet build --configuration Release --no-restore
+
+    - name: Fail workflow if tests failed
+      if: steps.tests.outcome == 'failure'
+      run: exit 1
