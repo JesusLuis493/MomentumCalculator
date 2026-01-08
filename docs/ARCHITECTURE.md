@@ -29,17 +29,25 @@ MomentumCalculator/
 │   │   ├── MomentumCalculator.Core.csproj
 │   │   └── Operaciones.cs              # Clase principal con algoritmos
 │   │
-│   ├── MomentumCalculator.CLI/         # Interfaz por línea de comandos
+│   ├── MomentumCalculator.CLI/          # Interfaz por línea de comandos
 │   │   ├── MomentumCalculator.CLI.csproj
-│   │   └── Program.cs                  # Menús y entrada de usuario
+│   │   └── Program.cs                   # Menús y entrada de usuario
 │   │
-│   └── MomentumCalculator.API/         # ⏳ API REST (futuro)
-│       ├── MomentumCalculator.API.csproj
-│       ├── Controllers/
-│       │   └── MomentumController.cs
-│       └── Startup.cs
+│   └── MomentumCalculator.API/           # 🆕 NUEVO - La API
+│      │
+│      ├── Controllers/                   # Reciben las peticiones HTTP
+│      │   ├── FuerzaController. cs       # Maneja /api/fuerza/*
+│      │   ├── MomentumController.cs      # Maneja /api/momentum/*
+│      │   ├── TrianguloController.cs     # Maneja /api/triangulo/*
+│      │   └── HealthController. cs       # Maneja /api/health
+│      │
+│      ├── Models/                        # Definen estructura de datos
+│      │   ├── FuerzaModels.cs            # Request/Response de fuerza
+│      │   ├── MomentumModels.cs          # Request/Response de momentum
+│      │   └── TrianguloModels. cs        # Request/Response de triángulo
+│      └── MomentumCalculator.API.csproj  # Configuración del proyecto
 │
-├── test/                              # Pruebas unitarias
+├── test/                               # Pruebas unitarias
 │   └── MomentumCalculator.Tests/
 │       ├── MomentumCalculator.Tests.csproj
 │       ├── scripts                     # Sicripts de automatizacion de tests
@@ -66,12 +74,28 @@ MomentumCalculator/
 
 #### **Operaciones.cs**
 ```csharp
-public class Operaciones : ICalculator
+namespace Operations
 {
-    public CalculationResult CalculateComponentX(double force, double angle) { ... }
-    public CalculationResult CalculateComponentY(double force, double angle) { ... }
-    // ... más métodos
-}
+    public class Create
+    {
+        //clase de validacion 0
+        public void validacion(double n)
+        {
+            if (n == 0)
+            {
+                Console.WriteLine("[falla de validacion, {0} no puedes ser 0]", n);
+            }
+        }
+        // constantes de conversion de angulos a radianes
+        private const double DEG_TO_RAD = Math.PI / 180;
+        private const double RAD_TO_DEG = 180 / Math.PI;
+        
+        //componentes x & y de la fuerza ejercida
+        public double CompX(double F, double A) //fuerza ejercida en el eje x
+        {
+            double Fx = F * Math.Cos(A * DEG_TO_RAD);
+            return (Fx);
+        }
 ```
 
 **Propósito:** Implementación actual de los cálculos.
@@ -109,21 +133,20 @@ public class Operaciones : ICalculator
 #### **OperacionesTests.cs**
 ```csharp
 [Clase de Prueba]
-Pruebas de clase pública Operaciones
+namespace Tests
 {
-    [Método de prueba]
-    public void CalculateComponentX_WithValidInput_ReturnsExpectedValue()
+    using Operations;
+    [TestClass]
+    internal class UnitTests
     {
-        // Organizar
-        Calculadora ICalculadora = nuevo Operaciones();
-        
-        // Actuar
-        var resultado = calculator.CalculateComponentX(10, 45);
-        
-        // Afirmar
-        Assert.IsTrue(result.Success);
-        Assert.AreEqual(7.07, result.Value, 2); // 2 decimales de precisión
-    }
+        // Verificasion de comportamiento del metodo Validacion de Operations.cs
+        [TestMethod]
+        [Trait("Category", "Unit")]
+        public void TestMethod_Validacion_input0()
+        {
+            double result = Operations.Validacion("1234567890");
+            Assert.AreEqual(1234567890, result);
+        }
 ```
 
 **Características:**
@@ -252,33 +275,8 @@ MomentumCalculator.sln (Solución)
 
 ## 📦 Decisiones de Diseño
 
-### ¿Por qué ICalculator?
-- ✅ Permite múltiples implementaciones (Operaciones, OptimizedOperaciones, MockOperaciones)
-- ✅ Facilita testing sin tocar código de producción
-- ✅ Inyección de dependencias para desacoplamiento
-
-### ¿Por qué CalculationResult?
-- ✅ Estructura uniforme de respuestas
-- ✅ Manejo consistente de errores
-- ✅ Facilita logging y monitoreo
-- ✅ Compatible con APIs REST (JSON)
-
 ### ¿Por qué separar CLI de Core?
 - ✅ Core es reutilizable en API, web, mobile
 - ✅ Testing de Core sin menús ni I/O
 - ✅ Cambios en UI no afectan lógica
-
----
-
-## 🚀 Fases de Implementación
-
-| Fase | Fecha | Tarea | Estado |
-|------|-------|-------|--------|
-| 0 | Hoy | Documentación | ⏳ En progreso |
-| 1 | +2h | Estructura de carpetas | ⏳ Por hacer |
-| 2 | +3h | Refactorización Core | ⏳ Por hacer |
-| 3 | +4h | Tests unitarios | ⏳ Por hacer |
-| 4 | +4h | API REST | ⏳ Por hacer |
-| 5 | +2h | CI/CD | ⏳ Por hacer |
-
 ---
