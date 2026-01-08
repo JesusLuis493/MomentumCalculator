@@ -27,11 +27,7 @@ MomentumCalculator/
 ├── src/                                # Código fuente
 │   ├── MomentumCalculator.Core/        # ⭐ Lógica de negocio pura
 │   │   ├── MomentumCalculator.Core.csproj
-│   │   ├── Operaciones.cs              # Clase principal con algoritmos
-│   │   ├── Models/                     # Modelos de datos
-│   │   │   └── CalculationResult.cs    # Respuesta estándar
-│   │   └── Interfaces/                 # Contratos
-│   │       └── ICalculator.cs          # Interfaz de cálculos
+│   │   └── Operaciones.cs              # Clase principal con algoritmos
 │   │
 │   ├── MomentumCalculator.CLI/         # Interfaz por línea de comandos
 │   │   ├── MomentumCalculator.CLI.csproj
@@ -46,8 +42,9 @@ MomentumCalculator/
 ├── test/                              # Pruebas unitarias
 │   └── MomentumCalculator.Tests/
 │       ├── MomentumCalculator.Tests.csproj
+│       ├── scripts                     # Sicripts de automatizacion de tests
+│       │   └── suite_testing.sh        # Suite de tests para poder desplegras todos los tests
 │       ├── Unit_Tests.cs               # Test unitarios 
-│       ├── OperacionesTests.cs         # Tests de lógica
 │       └── IntegrationTests.cs         # Tests de integración (futuro)
 │
 ├── .gitignore                          # Archivos ignorados por Git
@@ -67,20 +64,6 @@ MomentumCalculator/
 
 **Componentes:**
 
-#### **Interfaces/ICalculator.cs**
-```csharp
-public interface ICalculator
-{
-    CalculationResult CalculateComponentX(double force, double angle);
-    CalculationResult CalculateComponentY(double force, double angle);
-    CalculationResult CalculateMomentumX(double distance, double forceX);
-    CalculationResult CalculateMomentumY(double distance, double forceY);
-    CalculationResult CalculateAngle(double forceX, double forceY);
-}
-```
-
-**Propósito:** Define el contrato que TODA implementación debe cumplir.
-
 #### **Operaciones.cs**
 ```csharp
 public class Operaciones : ICalculator
@@ -92,19 +75,6 @@ public class Operaciones : ICalculator
 ```
 
 **Propósito:** Implementación actual de los cálculos.
-
-#### **Models/CalculationResult.cs**
-```csharp
-public class CalculationResult
-{
-    public bool Success { get; }
-    public double Value { get; }
-    public string Message { get; }
-    public string Unit { get; }
-}
-```
-
-**Propósito:** Respuesta estructurada para TODOS los cálculos (éxito/error, valor, contexto).
 
 ---
 
@@ -123,7 +93,6 @@ public class CalculationResult
 - Manejo de excepciones de UI
 
 **Características:**
-- ✅ Depende de `ICalculator` (no de `Operaciones`)
 - ✅ Es **reemplazable** (se puede cambiar por web, mobile, etc.)
 - ✅ No contiene lógica de negocio
 
@@ -200,45 +169,29 @@ public class MomentumController : ControllerBase
 
 ```
 ┌─────────────────────────────┐
-│      Usuario (Terminal)     │
+│   Usuario (Terminal)        │
+│   Ingresa:  F=10, A=45°      │
 └──────────────┬──────────────┘
-               │ input: F=10, A=45°
+               │ input
                ↓
 ┌─────────────────────────────┐
-│    CLI (Program.cs)         │ ← Lee entrada, valida UI
-│  - Menús                    │
-│  - Lectura stdin            │
-└──────────────┬──────────────┘
-               │ Fx = 10, Fy = 20
-               ↓
-┌─────────────────────────────┐
-│   ICalculator (Interface)   │ ← Contrato
-│  CalculateComponentX()      │
+│  CLI (Program.cs)           │ ← Captura datos
+│  Console.ReadLine()         │
 └──────────────┬──────────────┘
                │
                ↓
 ┌─────────────────────────────┐
-│  Operaciones (Core)         │ ← Implementación real
-│  - Math.Cos()               │
-│  - Math.Sin()               │
+│  Operaciones. cs (Core)      │ ← Procesa cálculos
+│  - CompX(10, 45)            │
+│  - Math.Cos(), Math.Sin()   │
 │  - Validaciones             │
+│  Resultado: 7.07            │
 └──────────────┬──────────────┘
                │
                ↓
 ┌─────────────────────────────┐
-│  CalculationResult          │ ← Respuesta estructurada
-│  {                          │
-│    Success: true,           │
-│    Value: 7.07,             │
-│    Message: "Éxito",        │
-│    Unit: "N"                │
-│  }                          │
-└──────────────┬──────────────┘
-               │
-               ↓
-┌─────────────────────────────┐
-│    CLI (Program.cs)         │ ← Muestra resultado
-│  Print "✅ 7.07 N"          │
+│  CLI (Program.cs)           │ ← Muestra resultado
+│  Console.WriteLine("✅ 7.07")│
 └─────────────────────────────┘
 ```
 
