@@ -1,50 +1,93 @@
-# Archivos de compilación
+# ═══════════════════════════════════════════════════════════════
+# . gitignore - MomentumCalculator
+# ═══════════════════════════════════════════════════════════════
+
+# ┌─────────────────────────────────────────────────────────────┐
+# │ COMPILACIÓN . NET                                            │
+# └─────────────────────────────────────────────────────────────┘
 *.exe
 *.dll
 *.pdb
 *.obj
-*.suo
-*.user
-*.userprefs
 *.cache
-*.pid
 *.log
-*.vspscc
-*.vssscc
-*.vsdpscc
-*.VC.db
-*.VC.VC.opendb
-*.VC.VC.db
-*.VC.VC.layout
-*.vsidx
-
-# Carpetas de compilación
-/bin
-/obj
-/packages
-_ReSharper.*
-
-# Archivos de Visual Studio
-.vs/
-*.csproj.user
-*.sln.docstates
-*.Build.cs
-*.tmp
-*.tmp_debug
-*.resharper.*
-
-# Archivos del sistema operativo
 [Bb]in/
 [Oo]bj/
-*.DS_Store
-Thumbs.db
 
-# Archivos de NuGet
+# ┌─────────────────────────────────────────────────────────────┐
+# │ VISUAL STUDIO / RIDER                                       │
+# └─────────────────────────────────────────────────────────────┘
+.vs/
+*.suo
+*.user
+*. userprefs
+*. csproj.user
+*.sln. docstates
+*.vsidx
+_ReSharper*/
+*.resharper
+. idea/
+
+# ┌─────────────────────────────────────────────────────────────┐
+# │ NUGET                                                       │
+# └─────────────────────────────────────────────────────────────┘
 packages/
 *.nupkg
 *.snupkg
-*.nuspec
 
-# Otros
-*.swp
-*.lock
+# ┌─────────────────────────────────────────────────────────────┐
+# │ RESULTADOS DE TESTS                                         │
+# └─────────────────────────────────────────────────────────────┘
+TestResults/
+*.trx
+coverage*/
+*.coverage
+*. coveragexml
+
+# ┌─────────────────────────────────────────────────────────────┐
+# │ DOCKER                                                      │
+# └─────────────────────────────────────────────────────────────┘
+# No ignorar Dockerfile ni docker-compose.yml (los queremos)
+# Pero sí ignorar archivos temporales de Docker
+*.log
+docker-compose. override.yml
+
+# ┌─────────────────────────────────────────────────────────────┐
+# │ TERRAFORM                                                   │
+# └─────────────────────────────────────────────────────────────┘
+. terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+*.tfvars
+! terraform.tfvars. example
+. terraform.lock.hcl
+
+# ┌─────────────────────────────────────────────────────────────┐
+# │ SECRETOS Y CREDENCIALES (MUY IMPORTANTE)                    │
+# └─────────────────────────────────────────────────────────────┘
+*.env
+. env.*
+! .env.example
+appsettings.*. local.json
+secrets/
+*.pem
+*.key
+credentials.json
+
+# ┌─────────────────────────────────────────────────────────────┐
+# │ SISTEMA OPERATIVO                                           │
+# └─────────────────────────────────────────────────────────────┘
+.DS_Store
+Thumbs.db
+*. swp
+*~
+
+# ┌─────────────────────────────────────────────────────────────┐
+# │ EDITORES                                                    │
+# └─────────────────────────────────────────────────────────────┘
+*. tmp
+*.bak
+*.orig
+.vscode/settings.json
+.vscode/launch.json
