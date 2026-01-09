@@ -23,7 +23,7 @@ MomentumCalculator/
 │   ├── CONTRIBUTING.md                 # Guía para contribuidores
 │   ├── CURRENT_STATES.md               # Estado del proyecto durante la refactorizacion
 │   ├── TECHNICAL_NOTES.md              # Análisis de algoritmos y optimizaciones
-│   └── API_DESIGN.md                   # Diseño de endpoints (futuro)
+│   └── API_DESIGN.md                   # Diseño de endpoints 
 ├── src/                                # Código fuente
 │   ├── MomentumCalculator.Core/        # ⭐ Lógica de negocio pura
 │   │   ├── MomentumCalculator.Core.csproj
@@ -156,7 +156,7 @@ namespace Tests
 
 ---
 
-### **4️⃣ Capa de API (Futuro)**
+### **4️⃣ Capa de API **
 
 **Ubicación:** `src/MomentumCalculator.API/`
 
@@ -164,25 +164,17 @@ namespace Tests
 
 **Ejemplo (pseudo-código):**
 ```csharp
-[ApiController]
-[Route("api/[controller]")]
-public class MomentumController : ControllerBase
+var builder = WebApplication. CreateBuilder(args);
+
+builder.Services.AddControllers();
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+if (app.Environment. IsDevelopment())
 {
-    private readonly ICalculator _calculator;
-    
-    public MomentumController(ICalculator calculator)
-    {
-        _calculator = calculator;
-    }
-    
-    [HttpPost("component-x")]
-    public IActionResult CalculateComponentX([FromBody] ForceRequest request)
-    {
-        var result = _calculator.CalculateComponentX(request.Force, request.Angle);
-        if (!result.Success)
-            return BadRequest(new { error = result.Message });
-        return Ok(result);
-    }
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 ```
 
