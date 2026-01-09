@@ -36,6 +36,15 @@ Este proyecto refleja conocimientos adquiridos en cursos de Física General y Es
 - **Interfaz Intuitiva**: Menú de consola claro y educativo, con validación de entradas.
 - **Notas Importantes**: Incluye advertencias sobre el alcance limitado del software (no resuelve problemas físicos completos ni determina sentidos de fuerzas automáticamente).
 
+## 📋 Resumen: Stack Final
+Código:        C# / .NET 8                                   
+API:           ASP.NET Core + Swagger                                                             
+Tests:         xUnit + suite_testing.sh                               
+CI/CD:         GitHub Actions                                          
+Infra:         Terraform                       
+Cloud:         Oracle Cloud (Free Tier)                                         
+Monitoreo:     Health endpoint + logs nativos                                     
+
 ## 🧠 Motivación
 
 Este proyecto fue creado **100% por mí** como estudiante del Instituto Tecnológico de México, Campus Nochistlán. Surge de la necesidad de tener una herramienta rápida y confiable para validar cálculos durante clases, tareas o prácticas. Está pensado para estudiantes que buscan **automatizar cálculos básicos sin depender de software complejo**.
