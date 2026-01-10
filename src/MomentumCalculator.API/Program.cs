@@ -46,3 +46,4 @@ app.MapControllers();
 // └─────────────────────────────────────────────────────────────┘
 
 app.Run();  // La API empieza a escuchar en http://localhost:5000
+public partial class Program { }
