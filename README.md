@@ -92,29 +92,55 @@ code .  # Abre en Visual Studio Code
 ## 📂 Estructura del proyecto
 
 ```
-MomentumCalculator/                     # Documentación principalMomentumCalculator/
+MomentumCalculator/
+├── MomentumCalculator.sln              # Solución que agrupa todos los proyectos
 ├── .github/
 │   └── workflows/
-│       └── dotnet.yml                  # Pipeline de CI/CD (GitHub Actions)
+│       └── dotnet.yml                   # Pipeline de CI/CD (GitHub Actions)
 ├── docs/                               # Documentación técnica
 │   ├── ARCHITECTURE.md                 # Este archivo
 │   ├── CONTRIBUTING.md                 # Guía para contribuidores
 │   ├── CURRENT_STATES.md               # Estado del proyecto durante la refactorizacion
-│   └── TECHNICAL_NOTES.md              # Análisis de algoritmos y optimizaciones
+│   ├── TECHNICAL_NOTES.md              # Análisis de algoritmos y optimizaciones
+│   └── API_DESIGN.md                   # Diseño de endpoints 
 ├── src/                                # Código fuente
 │   ├── MomentumCalculator.Core/        # ⭐ Lógica de negocio pura
 │   │   ├── MomentumCalculator.Core.csproj
 │   │   └── Operaciones.cs              # Clase principal con algoritmos
-│   └── MomentumCalculator.CLI/         # Interfaz por línea de comandos
-│       ├── MomentumCalculator.CLI.csproj
-│       └── Program.cs                  # Menús y entrada de usuario
-├── test/                              # Pruebas unitarias
+│   │
+│   ├── MomentumCalculator.CLI/          # Interfaz por línea de comandos
+│   │   ├── MomentumCalculator.CLI.csproj
+│   │   └── Program.cs                   # Menús y entrada de usuario
+│   │
+│   └── MomentumCalculator.API/           # 🆕 NUEVO - La API
+│      │
+│      ├── Controllers/                   # Reciben las peticiones HTTP
+│      │   ├── FuerzaController. cs       # Maneja /api/fuerza/*
+│      │   ├── MomentumController.cs      # Maneja /api/momentum/*
+│      │   ├── TrianguloController.cs     # Maneja /api/triangulo/*
+│      │   └── HealthController. cs       # Maneja /api/health
+│      │
+│      ├── Models/                        # Definen estructura de datos
+│      │   ├── FuerzaModels.cs            # Request/Response de fuerza
+│      │   ├── MomentumModels.cs          # Request/Response de momentum
+│      │   └── TrianguloModels. cs        # Request/Response de triángulo
+│      └── MomentumCalculator.API.csproj  # Configuración del proyecto
+│
+├── test/                                 # Pruebas unitarias
 │   └── MomentumCalculator.Tests/
-│       └── Unit_Tests.cs               # Test unitarios 
+│       ├── MomentumCalculator.Tests.csproj
+│       ├── MomentumCalculator.Tests/
+│       │   └── Unit_Tests.cs             # Test unitarios 
+│       ├── MomentumCalculator.API.Tests/
+│       │   ├── GlobalUsings.cs
+│       │   └── IntegrationTests.cs       # Tests de integración
+│       │   └── MomentumCalculator.API.Tets.csproj 
+│       └── scripts/                      # Sicripts de automatizacion de tests
+│           └── suite_testing.sh          # Suite de tests para poder desplegras todos los test
+│
 ├── .gitignore                          # Archivos ignorados por Git
 ├── LICENSE                             # Licencia MIT
-├── MomentumCalculator.sln              # Solución que agrupa todos los proyectos
-└── README.md                           # Documentación principal         
+└── README.md                           # Documentación principal                         # Documentación principal         
 ``` 
 ---
 
