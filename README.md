@@ -112,7 +112,7 @@ MomentumCalculator/
 │   │   ├── MomentumCalculator.CLI.csproj
 │   │   └── Program.cs                   # Menús y entrada de usuario
 │   │
-│   └── MomentumCalculator.API/           # 🆕 NUEVO - La API
+│   └── MomentumCalculator.API/           # Creada con ayuda de la IA para optimizar tiempos - La API
 │      │
 │      ├── Controllers/                   # Reciben las peticiones HTTP
 │      │   ├── FuerzaController. cs       # Maneja /api/fuerza/*
