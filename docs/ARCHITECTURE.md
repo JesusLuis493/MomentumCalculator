@@ -47,13 +47,17 @@ MomentumCalculator/
 │      │   └── TrianguloModels. cs        # Request/Response de triángulo
 │      └── MomentumCalculator.API.csproj  # Configuración del proyecto
 │
-├── test/                               # Pruebas unitarias
+├── test/                                 # Pruebas unitarias
 │   └── MomentumCalculator.Tests/
 │       ├── MomentumCalculator.Tests.csproj
-│       ├── scripts                     # Sicripts de automatizacion de tests
-│       │   └── suite_testing.sh        # Suite de tests para poder desplegras todos los tests
-│       ├── Unit_Tests.cs               # Test unitarios 
-│       └── IntegrationTests.cs         # Tests de integración (futuro)
+│       ├── MomentumCalculator.Tests/
+│       │   └── Unit_Tests.cs             # Test unitarios 
+│       ├── MomentumCalculator.API.Tests/
+│       │   ├── GlobalUsings.cs
+│       │   └── IntegrationTests.cs       # Tests de integración
+│       │   └── MomentumCalculator.API.Tets.csproj 
+│       └── scripts/                      # Sicripts de automatizacion de tests
+│           └── suite_testing.sh          # Suite de tests para poder desplegras todos los test
 │
 ├── .gitignore                          # Archivos ignorados por Git
 ├── LICENSE                             # Licencia MIT
