@@ -134,7 +134,7 @@ namespace Operations
 
 **Componentes:**
 
-#### **OperacionesTests.cs**
+#### **UnitTests.cs**
 ```csharp
 [Clase de Prueba]
 namespace Tests
@@ -152,13 +152,42 @@ namespace Tests
             Assert.AreEqual(1234567890, result);
         }
 ```
+---
+
+### **IntegrationsTests.cs**
+```csharp
+using Microsoft.AspNetCore.Mvc. Testing;
+using System.Net;
+using System.Net.Http.Json;
+
+namespace MomentumCalculator.API. Tests
+{
+    public class IntegrationTests : IClassFixture<WebApplicationFactory<Program>>
+    {
+        private readonly HttpClient _client;
+
+        public IntegrationTests(WebApplicationFactory<Program> factory)
+        {
+            _client = factory.CreateClient();
+        }
+
+        [Fact]
+        [Trait("Category", "Integration")]
+        public async Task Health_ReturnsOk()
+        {
+            var response = await _client. GetAsync("/api/health");
+
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        }
+```
 
 **Características:**
 - ✅ Usa mocks para aislar componentes
 - ✅ Ejecuta rápido (sin dependencias externas)
 - ✅ Cobertura mínima: 80%
+- ✅ Cobertura Real: 100%
 
----
+--- 
 
 ### **4️⃣ Capa de API **
 
@@ -166,7 +195,7 @@ namespace Tests
 
 **Responsabilidad:** Exponer Core como REST API
 
-**Ejemplo (pseudo-código):**
+**Ejemplo**
 ```csharp
 var builder = WebApplication. CreateBuilder(args);
 
@@ -181,7 +210,9 @@ if (app.Environment. IsDevelopment())
     app.UseSwaggerUI();
 }
 ```
-
+**Características:**
+- ✅ Usa de swagger para verificar los endpoints
+- ✅ Requiere de un solo tipo de tests
 ---
 
 ## 🔄 Flujo de Datos
