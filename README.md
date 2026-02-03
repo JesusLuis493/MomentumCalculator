@@ -42,7 +42,8 @@ API:           ASP.NET Core + Swagger
 Tests:         xUnit + suite_testing.sh                               
 CI/CD:         GitHub Actions                                          
 Infra:         Terraform                       
-Cloud:         Oracle Cloud (Free Tier)                                         
+Contenedor:    Docker
+Cloud:         Google Cloud (Free Tier)                                         
 Monitoreo:     Health endpoint + logs nativos                                     
 
 ## 🧠 Motivación
@@ -151,6 +152,7 @@ MomentumCalculator/
 - **Entorno de Desarrollo**: Visual Studio Code en Linux base Debian
 - **Control de Versiones**: Git
 - **CI/CD**: GitHub Actions (workflow básico para compilación y pruebas)
+- **Infraestructura**: Terraform (IaC)
 
 ## 🤝 Contribuciones
 
