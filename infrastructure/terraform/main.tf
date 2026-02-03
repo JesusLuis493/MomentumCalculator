@@ -1,12 +1,14 @@
 terraform {
   required_providers {
-    azurerm = {
-      source = "hashicorp/azurerm"
-      version = "4.58.0"
+    google = {
+      source = "hashicorp/google"
+      version = "7.17.0"
     }
   }
 }
 
-provider "azurerm" {
-  # Configuration options
+provider "google" {
+  project = "MomentumCalculator"
+  region = "us-central1"
+  zone = "us-central1-c"
 }
