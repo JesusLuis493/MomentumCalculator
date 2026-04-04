@@ -124,6 +124,7 @@ namespace Operations
     LABEL description="Docker image for .NET 8.0 SDK on Ubuntu"
 ``` 
 **Propósito:** Aprovicionar de un contenedor funcional para labores de CI/CD.
+
 ---
 
 ### **2️⃣ Capa de Presentación (CLI)**
