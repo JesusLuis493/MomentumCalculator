@@ -173,6 +173,32 @@ if (Frx == 0)
 
 return Math.Atan2(Fry, Frx) * (180 / Math.PI);  // Mejor: Atan2
 ```
+## **8. Infrastructura**
+
+### Configuracion global
+- Espesifica el  proovedor de cloud y la version a utilizar de dicho proovedor.
+
+### Configuracion de proovedor (Google)
+- Espesifica datos como el proyecto, la zon ay la region del proovedor de cloud.
+- Dicha informacion se maneja en variables creadas en su area correspondiente.
+
+### Variables
+- Inicializa las variables de entrada requeridas para optimizar el codigo y facilitar el amtenimiento a futuro.
+- Las varibelas Inicialisadas son utilizadas dentro de los bloques de configuracion y recursos.
+
+### Recurso API
+- **API :**
+Delimita unicamente caul sera el id del proyecto y el recurso a ulitizar devido al uso de API.
+
+### Infrastructura
+- **Artifacts :**
+Uso de artifact registry para mejorar y complementar el uso de contenedores docker, aprovicionando un entorno de almacenamiento reproducible para las imagenes docker.
+
+### Recurso para correr
+- **Cloud :**
+Hace uso de un servidor de google cloud, del tipo V2 mediante un contenedor de docker en el cual hace uso del API mediante el puerto establecido para accesar al codigo y llevar acabo las labores de CI/CD.
+
+### Outputs
 
 ---
 

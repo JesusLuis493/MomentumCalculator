@@ -104,6 +104,26 @@ namespace Operations
 
 **Propósito:** Implementación actual de los cálculos.
 
+#### **main.tf**
+```terraform
+    terraform {
+    required_providers {
+        google = {
+        source = "hashicorp/google"
+        version = "7.17.0"
+        }
+    }
+    }
+```
+**Propósito:** Proporciona una Iac para facilitar despliegues en cloud.
+
+### **dockerfile**
+```docker
+    LABEL maintainer="jesusdev@gmail.com"
+    LABEL version="1.0"
+    LABEL description="Docker image for .NET 8.0 SDK on Ubuntu"
+``` 
+**Propósito:** Aprovicionar de un contenedor funcional para labores de CI/CD.
 ---
 
 ### **2️⃣ Capa de Presentación (CLI)**
