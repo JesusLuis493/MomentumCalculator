@@ -177,7 +177,14 @@ return Math.Atan2(Fry, Frx) * (180 / Math.PI);  // Mejor: Atan2
 
 ### Configuracion global
 - Espesifica el  proovedor de cloud y la version a utilizar de dicho proovedor.
-
+``` terraform
+required_providers {
+    google = {
+      source = "hashicorp/google"
+      version = "7.17.0"
+    }
+  }
+```
 ### Configuracion de proovedor (Google)
 - Espesifica datos como el proyecto, la zon ay la region del proovedor de cloud.
 - Dicha informacion se maneja en variables creadas en su area correspondiente.
@@ -189,6 +196,14 @@ return Math.Atan2(Fry, Frx) * (180 / Math.PI);  // Mejor: Atan2
 ### Recurso API
 - **API :**
 Delimita unicamente caul sera el id del proyecto y el recurso a ulitizar devido al uso de API.
+``` terraform 
+resource "google_project_service" "artifact_registry_api" {
+  project = var.proyecto_id
+  service = "artifactregistry.googleapis.com"
+  disable_on_destroy = false
+}
+``` 
+
 
 ### Infrastructura
 - **Artifacts :**

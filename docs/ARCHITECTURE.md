@@ -76,7 +76,7 @@ MomentumCalculator/
 
 **Componentes:**
 
-#### **Operaciones.cs**
+### **Operaciones.cs**
 ```csharp
 namespace Operations
 {
@@ -104,7 +104,7 @@ namespace Operations
 
 **Propósito:** Implementación actual de los cálculos.
 
-#### **main.tf**
+### **main.tf**
 ```terraform
     terraform {
     required_providers {
@@ -135,7 +135,7 @@ namespace Operations
 
 **Componentes:**
 
-#### **Program.cs**
+### **Program.cs**
 - Menús
 - Lectura de entrada
 - Mostrar resultados
@@ -155,7 +155,7 @@ namespace Operations
 
 **Componentes:**
 
-#### **UnitTests.cs**
+### **UnitTests.cs**
 ```csharp
 [Clase de Prueba]
 namespace Tests

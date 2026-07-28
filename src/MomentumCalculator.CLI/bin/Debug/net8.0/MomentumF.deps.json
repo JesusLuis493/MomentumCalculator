@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "MomentumF/1.0.0": {
+        "dependencies": {
+          "MomentumCalculator.Core": "1.0.0"
+        },
+        "runtime": {
+          "MomentumF.dll": {}
+        }
+      },
+      "MomentumCalculator.Core/1.0.0": {
+        "runtime": {
+          "MomentumCalculator.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MomentumF/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MomentumCalculator.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

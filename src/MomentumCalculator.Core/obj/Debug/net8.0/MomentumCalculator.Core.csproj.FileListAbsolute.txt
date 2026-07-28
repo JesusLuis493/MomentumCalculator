@@ -1,0 +1,12 @@
+/home/jesus-luis/MomentumCalculator/src/MomentumCalculator.Core/bin/Debug/net8.0/MomentumCalculator.Core.deps.json
+/home/jesus-luis/MomentumCalculator/src/MomentumCalculator.Core/bin/Debug/net8.0/MomentumCalculator.Core.dll
+/home/jesus-luis/MomentumCalculator/src/MomentumCalculator.Core/bin/Debug/net8.0/MomentumCalculator.Core.pdb
+/home/jesus-luis/MomentumCalculator/src/MomentumCalculator.Core/obj/Debug/net8.0/MomentumCalculator.Core.GeneratedMSBuildEditorConfig.editorconfig
+/home/jesus-luis/MomentumCalculator/src/MomentumCalculator.Core/obj/Debug/net8.0/MomentumCalculator.Core.AssemblyInfoInputs.cache
+/home/jesus-luis/MomentumCalculator/src/MomentumCalculator.Core/obj/Debug/net8.0/MomentumCalculator.Core.AssemblyInfo.cs
+/home/jesus-luis/MomentumCalculator/src/MomentumCalculator.Core/obj/Debug/net8.0/MomentumCalculator.Core.csproj.CoreCompileInputs.cache
+/home/jesus-luis/MomentumCalculator/src/MomentumCalculator.Core/obj/Debug/net8.0/MomentumCalculator.Core.sourcelink.json
+/home/jesus-luis/MomentumCalculator/src/MomentumCalculator.Core/obj/Debug/net8.0/MomentumCalculator.Core.dll
+/home/jesus-luis/MomentumCalculator/src/MomentumCalculator.Core/obj/Debug/net8.0/refint/MomentumCalculator.Core.dll
+/home/jesus-luis/MomentumCalculator/src/MomentumCalculator.Core/obj/Debug/net8.0/MomentumCalculator.Core.pdb
+/home/jesus-luis/MomentumCalculator/src/MomentumCalculator.Core/obj/Debug/net8.0/ref/MomentumCalculator.Core.dll

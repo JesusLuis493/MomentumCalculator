@@ -1,0 +1,214 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/jesus-luis/MomentumCalculator/test/MomentumCalculator.API.Tests/MomentumCalculator.API.Tests.csproj": {}
+  },
+  "projects": {
+    "/home/jesus-luis/MomentumCalculator/src/MomentumCalculator.API/MomentumCalculator.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/jesus-luis/MomentumCalculator/src/MomentumCalculator.API/MomentumCalculator.API.csproj",
+        "projectName": "MomentumCalculator.API",
+        "projectPath": "/home/jesus-luis/MomentumCalculator/src/MomentumCalculator.API/MomentumCalculator.API.csproj",
+        "packagesPath": "/home/jesus-luis/.nuget/packages/",
+        "outputPath": "/home/jesus-luis/MomentumCalculator/src/MomentumCalculator.API/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/jesus-luis/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/jesus-luis/MomentumCalculator/src/MomentumCalculator.Core/MomentumCalculator.Core.csproj": {
+                "projectPath": "/home/jesus-luis/MomentumCalculator/src/MomentumCalculator.Core/MomentumCalculator.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.22, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.6.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.122/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/jesus-luis/MomentumCalculator/src/MomentumCalculator.Core/MomentumCalculator.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/jesus-luis/MomentumCalculator/src/MomentumCalculator.Core/MomentumCalculator.Core.csproj",
+        "projectName": "MomentumCalculator.Core",
+        "projectPath": "/home/jesus-luis/MomentumCalculator/src/MomentumCalculator.Core/MomentumCalculator.Core.csproj",
+        "packagesPath": "/home/jesus-luis/.nuget/packages/",
+        "outputPath": "/home/jesus-luis/MomentumCalculator/src/MomentumCalculator.Core/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/jesus-luis/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.122/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/jesus-luis/MomentumCalculator/test/MomentumCalculator.API.Tests/MomentumCalculator.API.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/jesus-luis/MomentumCalculator/test/MomentumCalculator.API.Tests/MomentumCalculator.API.Tests.csproj",
+        "projectName": "MomentumCalculator.API.Tests",
+        "projectPath": "/home/jesus-luis/MomentumCalculator/test/MomentumCalculator.API.Tests/MomentumCalculator.API.Tests.csproj",
+        "packagesPath": "/home/jesus-luis/.nuget/packages/",
+        "outputPath": "/home/jesus-luis/MomentumCalculator/test/MomentumCalculator.API.Tests/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/jesus-luis/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/jesus-luis/MomentumCalculator/src/MomentumCalculator.API/MomentumCalculator.API.csproj": {
+                "projectPath": "/home/jesus-luis/MomentumCalculator/src/MomentumCalculator.API/MomentumCalculator.API.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Testing": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.6.0, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.122/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
