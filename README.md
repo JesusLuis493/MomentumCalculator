@@ -4,6 +4,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![.NET](https://img.shields.io/badge/.NET-8.0-blue.svg)](https://dotnet.microsoft.com/)
 [![C#](https://img.shields.io/badge/C%23-12.0-purple.svg)](https://docs.microsoft.com/en-us/dotnet/csharp/)
+[![Terraform](https://img.shields.io/badge/Terraform-1.x-7B42BC.svg)](https://www.terraform.io/)
+[![Docker](https://img.shields.io/badge/Docker-27.x-2496ED.svg)](https://www.docker.com/)
 
 Proyecto educativo desarrollado en C# para simplificar cálculos físicos básicos relacionados con la descomposición de fuerzas y el cálculo de momentum, diseñado para estudiantes de física y ciencias relacionadas.
 
