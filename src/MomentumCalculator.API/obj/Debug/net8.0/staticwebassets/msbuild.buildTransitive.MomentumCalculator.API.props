@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="../buildMultiTargeting/MomentumCalculator.API.props" />
-</Project>
