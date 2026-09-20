@@ -15,15 +15,22 @@ MomentumCalculator está diseñado siguiendo separación por capas para permitir
 ```
 MomentumCalculator/
 ├── MomentumCalculator.sln              # Solución que agrupa todos los proyectos
+│
 ├── .github/
 │   └── workflows/
 │       └── ci-cd.yml                   # Pipeline de CI/CD (GitHub Actions)
+│
 ├── docs/                               # Documentación técnica
 │   ├── ARCHITECTURE.md                 # Este archivo
 │   ├── CONTRIBUTING.md                 # Guía para contribuidores
-│   ├── CURRENT_STATES.md               # Estado del proyecto durante la refactorizacion
+│   ├── CURRENT_STATES.md               # Estado actual del proyecto
 │   ├── TECHNICAL_NOTES.md              # Análisis de algoritmos y optimizaciones
-│   └── API_DESIGN.md                   # Diseño de endpoints 
+│   └── API_DESSIGN.md                  # Diseño de endpoints 
+│
+├── infrastructure
+│   └── terraform
+│       └── main.tf
+│
 ├── src/                                # Código fuente
 │   ├── MomentumCalculator.Core/        # ⭐ Lógica de negocio pura
 │   │   ├── MomentumCalculator.Core.csproj
@@ -44,7 +51,11 @@ MomentumCalculator/
 │      ├── Models/                        # Definen estructura de datos
 │      │   ├── FuerzaModels.cs            # Request/Response de fuerza
 │      │   ├── MomentumModels.cs          # Request/Response de momentum
-│      │   └── TrianguloModels. cs        # Request/Response de triángulo
+│      │   └── TrianguloModels.cs         # Request/Response de triángulo
+│      │
+│      ├── Properties/                    # Propiedades
+│      │   └── LaunchSettings.json
+│      │
 │      └── MomentumCalculator.API.csproj  # Configuración del proyecto
 │
 ├── test/                                 # Pruebas unitarias
@@ -59,9 +70,11 @@ MomentumCalculator/
 │       └── scripts/                      # Sicripts de automatizacion de tests
 │           └── suite_testing.sh          # Suite de tests para poder desplegras todos los test
 │
+├── .dockerignore                       # Archivos ignorados por docker
 ├── .gitignore                          # Archivos ignorados por Git
 ├── LICENSE                             # Licencia MIT
-└── README.md                           # Documentación principal
+├── README.md                           # Documentación principal
+└── dockerfile
 ```
 
 ---
@@ -103,27 +116,6 @@ namespace Operations
 ```
 
 **Propósito:** Implementación actual de los cálculos.
-
-### **main.tf**
-```terraform
-    terraform {
-    required_providers {
-        google = {
-        source = "hashicorp/google"
-        version = "7.17.0"
-        }
-    }
-    }
-```
-**Propósito:** Proporciona una Iac para facilitar despliegues en cloud.
-
-### **dockerfile**
-```docker
-    LABEL maintainer="jesusdev@gmail.com"
-    LABEL version="1.0"
-    LABEL description="Docker image for .NET 8.0 SDK on Ubuntu"
-``` 
-**Propósito:** Aprovicionar de un contenedor funcional para labores de CI/CD.
 
 ---
 
@@ -235,6 +227,21 @@ if (app.Environment. IsDevelopment())
 - ✅ Usa de swagger para verificar los endpoints
 - ✅ Requiere de un solo tipo de tests
 ---
+
+### 5️⃣ Capa de Infraestructura y Despliegue
+
+**Docker**
+Ubicación: `dockerfile` (raíz)
+Propósito: empaquetar la API en una imagen ejecutable.
+
+**Terraform**
+Ubicación: `infrastructure/terraform/main.tf`
+Propósito: provisionar el entorno cloud (IaC).
+
+**CI/CD**
+Ubicación: `.github/workflows/`
+Propósito: build + test automáticos.
+
 
 ## 🔄 Flujo de Datos
 

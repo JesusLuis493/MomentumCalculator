@@ -1,6 +1,22 @@
 # 📖 Notas Técnicas - MomentumCalculator
 
-## Análisis de Algoritmos Actuales
+
+## **Lógica**
+
+La versión `1.0.0` establece la base de la calculadora, permitiendo a los usuarios realizar cálculos de momento y componentes de fuerza a partir de datos de entrada.
+El núcleo de la aplicación, contenido en `Operaciones.cs`, implementa las siguientes fórmulas físicas:
+
+-   **Cálculo de Componentes de Fuerza (usando ángulo):**
+    -   `Fx = F × cos(A°)`
+    -   `Fy = F × sin(A°)`
+-   **Cálculo de Componentes de Fuerza (usando triángulo notable):**
+    -   `Fx = F * (Cateto Adyacente / Hipotenusa)`
+    -   `Fy = F * (Cateto Opuesto / Hipotenusa)`
+-   **Cálculo de Momento:**
+    -   `Mx = Fx × dY`
+    -   `My = Fy × dX`
+-   **Cálculo de Ángulo.**
+-   **Validación de Entradas:** Se asegura que los valores de entrada no sean cero para prevenir errores de cálculo y lógicos.
 
 ### 1. Cálculo de Componentes en X (CompX)
 
@@ -173,7 +189,36 @@ if (Frx == 0)
 
 return Math.Atan2(Fry, Frx) * (180 / Math.PI);  // Mejor: Atan2
 ```
-## **8. Infrastructura**
+
+## **Tests**
+
+Los tests unitarios se integraron al proyecto por medio de un workflow que ejecuta la suite de tests en las labores de CI, el proyecto en total consta de 8 tests unitarios, los cuales cubren el 100% de la lógica actual de proyecto, alojada en ``Operaciones.cs``, en caso de requerise mas test se tiene previsto expandir la suite.
+
+- **Validacion_input0()**
+    - Antes de realizar cualquier calculo se realiza una verificasion para asegurar que los números ingresados no sean 0 y evitar errores de lógica.
+  
+- **CompX_correctCalculo()** 
+    - Siguiendo la formula de ``Fx = F × cos(A°)``, se cargan valores predeterminados dentro del test para llevar acabo el calculo y detectar errores.
+  
+- **CompY_correctCalculo()** 
+    - Siguiendo la formula de ``Fy = F × sin(A°)``, se cargan valores predeterminados dentro del test para llevar acabo el calculo y detectar errores.
+  
+- **MomentoX_correctCalculo()** 
+    - Usando como base la formula ``Mx = Fx × dY``, se usa el mismo concepto de introducir valores desde dentro del método de test para verificar la correcta funcionalidad para el usuario.
+  
+- **MomentoY_correctCalculo()** 
+    - Usando como base la formula ``My = Fy × dX``, se usa el mismo concepto de introducir valores desde dentro del método de test para verificar la correcta funcionalidad para el usuario.
+  
+- **ComponenteX_correctCalculo()** 
+    - En este caso se explora una variante de calculo basada en otro método igual de relevante en problemas de física, usando como referente un triangulo de medidas ya conocidas y la formula ``Fx = F * (catAd / Hip)``.
+  
+- **ComponenteY_correctCalculo()** 
+    - En este caso se explora una variante de calculo basada en otro método igual de relevante en problemas de física, usando como referente un triangulo de medidas ya conosidas y la formula ``Fy = F * (catOp / Hip)``.
+  
+- **Angulo_correctCalculo()** 
+    - Utilizando valores predeterminados cargados dentro del test hace uso del método ``public double angulo`` para verificar su funcionamiento tomando como criterio un resultado pre-asignado.
+
+## **Infrastructura**
 
 ### Configuracion global
 - Espesifica el  proovedor de cloud y la version a utilizar de dicho proovedor.
@@ -213,166 +258,6 @@ Uso de artifact registry para mejorar y complementar el uso de contenedores dock
 - **Cloud :**
 Hace uso de un servidor de google cloud, del tipo V2 mediante un contenedor de docker en el cual hace uso del API mediante el puerto establecido para accesar al codigo y llevar acabo las labores de CI/CD.
 
-### Outputs
-
----
-
-## 🔧 Optimizaciones Propuestas
-
-### Optimización 1: Cachear Constante PI/180
-
-**Problema Actual:**
-```csharp
-double Fx = F * Math.Cos(A * Math.PI / 180);  // Calcula π/180 cada vez
-```
-
-**Solución:**
-```csharp
-private const double DEG_TO_RAD = Math.PI / 180;
-private const double RAD_TO_DEG = 180 / Math.PI;
-
-public double CompX(double F, double A)
-{
-    return F * Math.Cos(A * DEG_TO_RAD);
-}
-```
-
-**Beneficio:** ⚡ 2-3% más rápido (menos operaciones de punto flotante)
-
----
-
-### Optimización 2: Usar Math.Atan2 en Lugar de Atan
-
-**Problema Actual:**
-```csharp
-Math.Atan(Fry / Frx)  // Falla si Frx = 0
-```
-
-**Solución:**
-```csharp
-Math.Atan2(Fry, Frx)  // Maneja todos los cuadrantes automáticamente
-```
-
-**Beneficio:** ✅ Sin divisiones por cero, ✅ Ángulos en rango correcto (-π, π)
-
----
-
-### Optimización 3: Validación Temprana
-
-**Problema Actual:**
-```csharp
-public double CompX(double F, double A)
-{
-    return F * Math.Cos(A * Math.PI / 180);  // Valida al final
-}
-```
-
-**Solución:**
-```csharp
-public CalculationResult CalculateComponentX(double force, double angle)
-{
-    if (force <= 0)
-        return new CalculationResult(false, 0, "Fuerza debe ser > 0", "");
-    
-    if (angle < 0 || angle > 360)
-        return new CalculationResult(false, 0, "Ángulo fuera de rango [0, 360]", "");
-    
-    double fx = force * Math.Cos(angle * DEG_TO_RAD);
-    return new CalculationResult(true, fx, "Éxito", "N");
-}
-```
-
-**Beneficio:** ✅ Errores claros, ✅ Fail-fast, ✅ No throws innecesarios
-
----
-
-## 🎯 Precisión Numérica
-
-### Problema: Errores de Punto Flotante
-
-```csharp
-// Ejemplo
-double a = 0.1 + 0.2;
-Console.WriteLine(a);  // Output: 0.30000000000000004 ❌
-```
-
-**Solución:**
-```csharp
-// Redondear a N decimales
-public double Round(double value, int decimals = 2)
-{
-    return Math.Round(value, decimals);
-}
-
-// Uso
-double result = Round(7.0714285714285714, 2);  // 7.07 ✅
-```
-
-**Recomendación:** Redondear a 2-3 decimales en resultados.
-
----
-
-## 🧪 Casos de Prueba Críticos
-
-### Caso 1: Valores Positivos Válidos
-```
-Input:  F=10, A=45°
-Output: Fx=7.07, Fy=7.07 ✅
-```
-
-### Caso 2: Ángulo = 0°
-```
-Input:  F=10, A=0°
-Output: Fx=10, Fy=0 ✅ (Fuerza pura en X)
-```
-
-### Caso 3: Ángulo = 90°
-```
-Input:  F=10, A=90°
-Output: Fx≈0, Fy=10 ✅ (Fuerza pura en Y)
-```
-
-### Caso 4: Valor Cero (DEBE FALLAR)
-```
-Input:  F=0, A=45°
-Output: Error ❌ (Fuerza nula)
-```
-
-### Caso 5: Valores Negativos (DEBE FALLAR)
-```
-Input:  F=-5, A=45°
-Output: Error ❌ (Fuerza negativa)
-```
-
----
-
-## 📊 Complejidad Computacional
-
-| Método | Complejidad | Operaciones |
-|--------|-------------|-------------|
-| CompX | O(1) | 1 multiplicación, 1 cos |
-| CompY | O(1) | 1 multiplicación, 1 sin |
-| MomentoX | O(1) | 1 multiplicación |
-| Angulo | O(1) | 1 división, 1 atan, 1 multiplicación |
-
-**Conclusión:** ✅ Todas son O(1) - Excelente para cualquier escala
-
----
-
-## 🔐 Seguridad de Tipos
-
-**Actual (C# - Seguro):**
-```csharp
-public double CompX(double F, double A)  // Tipos explícitos
-```
-
-**Problema (Python - No tipado):**
-```python
-def CompX(F, A):  # ¿Qué tipo es F?
-    return F * math.cos(A * math.pi / 180)
-```
-
-**Ventaja C#:** Compilador previene errores de tipo en tiempo de compilación.
 
 ---
 
@@ -382,9 +267,7 @@ def CompX(F, A):  # ¿Qué tipo es F?
 |----------|-----------|----------|
 | Sin validaciones estructuradas | 🔴 CRÍTICA | Implementar CalculationResult |
 | Manejo de errores con try/catch | 🟡 ALTA | Uso de Result objects |
-| Sin tests | 🔴 CRÍTICA | Crear suite de tests |
 | Sin logging | 🟡 ALTA | Integrar ILogger |
-| Métodos con nombres inconsistentes | 🟡 MEDIA | Refactorizar nombres (CompX → CalculateComponentX) |
 | Sin versionamiento de API | 🟡 MEDIA | Documentar versión actual |
 
 ---
