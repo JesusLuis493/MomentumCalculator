@@ -14,67 +14,69 @@ MomentumCalculator está diseñado siguiendo separación por capas para permitir
 
 ```
 MomentumCalculator/
-├── MomentumCalculator.sln              # Solución que agrupa todos los proyectos
-│
 ├── .github/
 │   └── workflows/
-│       └── ci-cd.yml                   # Pipeline de CI/CD (GitHub Actions)
+│       └── dotnet.yml                    # Pipeline de CI/CD (GitHub Actions)
 │
-├── docs/                               # Documentación técnica
-│   ├── ARCHITECTURE.md                 # Este archivo
-│   ├── CONTRIBUTING.md                 # Guía para contribuidores
-│   ├── CURRENT_STATES.md               # Estado actual del proyecto
-│   ├── TECHNICAL_NOTES.md              # Análisis de algoritmos y optimizaciones
-│   └── API_DESSIGN.md                  # Diseño de endpoints 
+├── docs/                                 # Documentación técnica
+│   ├── API_DESSIGN.md
+│   ├── ARCHITECTURE.md
+│   ├── CONTRIBUTING.md
+│   ├── CURRENT_STATES.md
+│   └── TECHNICAL_NOTES.md
 │
 ├── infrastructure
 │   └── terraform
 │       └── main.tf
 │
-├── src/                                # Código fuente
-│   ├── MomentumCalculator.Core/        # ⭐ Lógica de negocio pura
-│   │   ├── MomentumCalculator.Core.csproj
-│   │   └── Operaciones.cs              # Clase principal con algoritmos
+├── src/
+│   ├── MomentumCalculator.API/
+│   │  │
+│   │  ├── Controllers/                   # Reciben las peticiones HTTP
+│   │  │   ├── FuerzaController. cs
+│   │  │   ├── HealthController.cs
+│   │  │   ├── MomentumController.cs
+│   │  │   └── TrianguloController.cs
+│   │  │
+│   │  ├── Models/                        # Definen estructura de datos
+│   │  │   ├── FuerzaModels.cs
+│   │  │   ├── MomentumModels.cs
+│   │  │   └── TrianguloModels.cs
+│   │  │
+│   │  ├── Properties/
+│   │  │   └── LaunchSettings.json
+│   │  │
+│   │  └── MomentumCalculator.API.csproj  # Configuración del proyecto
 │   │
-│   ├── MomentumCalculator.CLI/          # Interfaz por línea de comandos
+│   ├── MomentumCalculator.CLI/          
 │   │   ├── MomentumCalculator.CLI.csproj
-│   │   └── Program.cs                   # Menús y entrada de usuario
+│   │   └── Program.cs                         # Menús y entrada de usuario por terminal
 │   │
-│   └── MomentumCalculator.API/           # 🆕 NUEVO - La API
-│      │
-│      ├── Controllers/                   # Reciben las peticiones HTTP
-│      │   ├── FuerzaController. cs       # Maneja /api/fuerza/*
-│      │   ├── MomentumController.cs      # Maneja /api/momentum/*
-│      │   ├── TrianguloController.cs     # Maneja /api/triangulo/*
-│      │   └── HealthController. cs       # Maneja /api/health
-│      │
-│      ├── Models/                        # Definen estructura de datos
-│      │   ├── FuerzaModels.cs            # Request/Response de fuerza
-│      │   ├── MomentumModels.cs          # Request/Response de momentum
-│      │   └── TrianguloModels.cs         # Request/Response de triángulo
-│      │
-│      ├── Properties/                    # Propiedades
-│      │   └── LaunchSettings.json
-│      │
-│      └── MomentumCalculator.API.csproj  # Configuración del proyecto
+│   └── MomentumCalculator.Core/
+│       ├── MomentumCalculator.Core.csproj
+│       └── Operaciones.cs                    # Clase principal con algoritmos
 │
-├── test/                                 # Pruebas unitarias
-│   └── MomentumCalculator.Tests/
-│       ├── MomentumCalculator.Tests.csproj
-│       ├── MomentumCalculator.Tests/
-│       │   └── Unit_Tests.cs             # Test unitarios 
-│       ├── MomentumCalculator.API.Tests/
-│       │   ├── GlobalUsings.cs
-│       │   └── IntegrationTests.cs       # Tests de integración
-│       │   └── MomentumCalculator.API.Tets.csproj 
-│       └── scripts/                      # Sicripts de automatizacion de tests
-│           └── suite_testing.sh          # Suite de tests para poder desplegras todos los test
+├── test/
+│   ├── MomentumCalculator.API.Tests/
+│   │   ├── GlobalUsings.cs
+│   │   ├── IntegrationTests.cs
+│   │   └── MomentumCalculator.API.Tets.csproj
+│   │
+│   ├── MomentumCalculator.Tests/
+│   │   └── Unit_Tests.cs
+│   │
+│   ├── scripts/
+│   │   ├── TestsResults/
+│   │   └── suite_testing.sh
+│   │
+│   └── MomentumCalculator.Tests.csproj
 │
-├── .dockerignore                       # Archivos ignorados por docker
-├── .gitignore                          # Archivos ignorados por Git
-├── LICENSE                             # Licencia MIT
-├── README.md                           # Documentación principal
-└── dockerfile
+├── .dockerignore
+├── .gitignore
+├── dockerfile
+├── LICENSE
+├── MomentumCalculator.sln                # Solución que agrupa todos los proyectos
+└── README.md
 ```
 
 ---
@@ -141,7 +143,7 @@ namespace Operations
 
 ### **3️⃣ Capa de Tests**
 
-**Ubicación:** `tests/MomentumCalculator.Tests/`
+**Ubicación:** `test/MomentumCalculator.Tests/`
 
 **Responsabilidad:** Verificar que Core funciona correctamente
 
@@ -223,6 +225,7 @@ if (app.Environment. IsDevelopment())
     app.UseSwaggerUI();
 }
 ```
+
 **Características:**
 - ✅ Usa de swagger para verificar los endpoints
 - ✅ Requiere de un solo tipo de tests

@@ -1,8 +1,12 @@
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MomentumF", "src/MomentumCalculator.CLI/MomentumF.csproj", "{F4C76797-EF87-EDA8-091F-2300D4E1ACFD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MomentumF", "src\MomentumCalculator.CLI\MomentumF.csproj", "{F4C76797-EF87-EDA8-091F-2300D4E1ACFD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AE035870-B39B-4389-B360-ED6C432021E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MomentumCalculator.Core", "src\MomentumCalculator.Core\MomentumCalculator.Core.csproj", "{45100E2A-0F41-4CEC-A128-991A3F46ED85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,11 +18,18 @@ Global
 		{F4C76797-EF87-EDA8-091F-2300D4E1ACFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4C76797-EF87-EDA8-091F-2300D4E1ACFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4C76797-EF87-EDA8-091F-2300D4E1ACFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45100E2A-0F41-4CEC-A128-991A3F46ED85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45100E2A-0F41-4CEC-A128-991A3F46ED85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45100E2A-0F41-4CEC-A128-991A3F46ED85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45100E2A-0F41-4CEC-A128-991A3F46ED85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0FB693D0-E731-4FBA-BA2D-E7784AD8290C}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{45100E2A-0F41-4CEC-A128-991A3F46ED85} = {AE035870-B39B-4389-B360-ED6C432021E8}
 	EndGlobalSection
 EndGlobal

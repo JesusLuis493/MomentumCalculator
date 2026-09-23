@@ -24,8 +24,8 @@ Este proyecto se encuentra en preparacion para dar el siguiente paso a produccio
 | Decisión                  | Fecha | Motivo |
 |----------------------------|-------|--------|
 | Proveedor de nube: [Google]|24-12-2025|Free Tier|
-| Auditoria y consultoria: [Mantenimiento]|20-90-2026|Abandono general |
-| Limpieza tecnica: [bin/ obj/]|24-12-2025|Conflictos en git push|
+| Auditoria y consultoria: [Mantenimiento]|20-09-2026|Abandono general |
+| Limpieza tecnica: [bin/ obj/]|20-09-2026|Conflictos en git push|
 
 --- 
 
@@ -38,9 +38,9 @@ Este proyecto se encuentra en preparacion para dar el siguiente paso a produccio
 ---
 
 ## 5. Próximos pasos
-1. Actualizar `CURRENT_STATES`
-2. Revisar y corregir `ARCHITECTURE.md`
-3. Trabajar la capa de Infrastructura
+1. Retormar trabajos en la capa de infra
+2. Auditar y revisar el `dockerfile`
+
 
 ## 6. Métricas rápidas
 - Commits: 82

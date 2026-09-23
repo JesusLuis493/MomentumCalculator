@@ -347,3 +347,16 @@ Si encuentras un bug:
 - Contacta al PM (@JesusLuis493)
 
 --- 
+
+## 👤 Autor
+
+**Jesus Emmanuel Luis Sandoval**  
+Estudiante de Ingeniería en Sistemas Computacionales  
+Instituto Tecnológico de México, Campus Nochistlán  
+
+Apasionado por el desarrollo de software, DevOps, scripting y la accesibilidad tecnológica. Este proyecto forma parte de mi portafolio personal.
+
+## 📞 Contacto
+
+- **GitHub**: [JesusLuis493](https://github.com/JesusLuis493)
+- **Correo Electrónico**: [jesusluis.dev@gmail.com]

@@ -12,7 +12,7 @@ Proyecto educativo desarrollado en C# para simplificar cálculos físicos básic
 ## 📋 Tabla de Contenidos
 
 - [Descripción](#-descripción)
-- [Características](#-caracteristicas)
+- [Características](#-Características)
 - [Motivación](#-motivación)
 - [Requisitos Previos](#-requisitos-previos)
 - [Instalación](#-instalación)
@@ -89,61 +89,84 @@ Opción B: Local
 ```bash
 code .  # Abre en Visual Studio Code
 ```
+---
 
+## 🚀 Ejecución
+
+Para correr el programa desde la terminal:
+
+```bash
+dotnet run
+```
 ---
 
 ## 📂 Estructura del proyecto
 
 ```
 MomentumCalculator/
-├── MomentumCalculator.sln              # Solución que agrupa todos los proyectos
 ├── .github/
 │   └── workflows/
-│       └── dotnet.yml                   # Pipeline de CI/CD (GitHub Actions)
-├── docs/                               # Documentación técnica
-│   ├── ARCHITECTURE.md                 # Este archivo
-│   ├── CONTRIBUTING.md                 # Guía para contribuidores
-│   ├── CURRENT_STATES.md               # Estado del proyecto durante la refactorizacion
-│   ├── TECHNICAL_NOTES.md              # Análisis de algoritmos y optimizaciones
-│   └── API_DESIGN.md                   # Diseño de endpoints 
-├── src/                                # Código fuente
-│   ├── MomentumCalculator.Core/        # ⭐ Lógica de negocio pura
-│   │   ├── MomentumCalculator.Core.csproj
-│   │   └── Operaciones.cs              # Clase principal con algoritmos
+│       └── dotnet.yml                    # Pipeline de CI/CD (GitHub Actions)
+│
+├── docs/                                 # Documentación técnica
+│   ├── API_DESSIGN.md
+│   ├── ARCHITECTURE.md
+│   ├── CONTRIBUTING.md
+│   ├── CURRENT_STATES.md
+│   └── TECHNICAL_NOTES.md
+│
+├── infrastructure
+│   └── terraform
+│       └── main.tf
+│
+├── src/
+│   ├── MomentumCalculator.API/
+│   │  │
+│   │  ├── Controllers/                   # Reciben las peticiones HTTP
+│   │  │   ├── FuerzaController. cs
+│   │  │   ├── HealthController.cs
+│   │  │   ├── MomentumController.cs
+│   │  │   └── TrianguloController.cs
+│   │  │
+│   │  ├── Models/                        # Definen estructura de datos
+│   │  │   ├── FuerzaModels.cs
+│   │  │   ├── MomentumModels.cs
+│   │  │   └── TrianguloModels.cs
+│   │  │
+│   │  ├── Properties/
+│   │  │   └── LaunchSettings.json
+│   │  │
+│   │  └── MomentumCalculator.API.csproj  # Configuración del proyecto
 │   │
-│   ├── MomentumCalculator.CLI/          # Interfaz por línea de comandos
+│   ├── MomentumCalculator.CLI/          
 │   │   ├── MomentumCalculator.CLI.csproj
-│   │   └── Program.cs                   # Menús y entrada de usuario
+│   │   └── Program.cs                         # Menús y entrada de usuario por terminal
 │   │
-│   └── MomentumCalculator.API/           # Creada con ayuda de la IA para optimizar tiempos - La API
-│      │
-│      ├── Controllers/                   # Reciben las peticiones HTTP
-│      │   ├── FuerzaController. cs       # Maneja /api/fuerza/*
-│      │   ├── MomentumController.cs      # Maneja /api/momentum/*
-│      │   ├── TrianguloController.cs     # Maneja /api/triangulo/*
-│      │   └── HealthController. cs       # Maneja /api/health
-│      │
-│      ├── Models/                        # Definen estructura de datos
-│      │   ├── FuerzaModels.cs            # Request/Response de fuerza
-│      │   ├── MomentumModels.cs          # Request/Response de momentum
-│      │   └── TrianguloModels. cs        # Request/Response de triángulo
-│      └── MomentumCalculator.API.csproj  # Configuración del proyecto
+│   └── MomentumCalculator.Core/
+│       ├── MomentumCalculator.Core.csproj
+│       └── Operaciones.cs                    # Clase principal con algoritmos
 │
-├── test/                                 # Pruebas unitarias
-│   └── MomentumCalculator.Tests/
-│       ├── MomentumCalculator.Tests.csproj
-│       ├── MomentumCalculator.Tests/
-│       │   └── Unit_Tests.cs             # Test unitarios 
-│       ├── MomentumCalculator.API.Tests/
-│       │   ├── GlobalUsings.cs
-│       │   └── IntegrationTests.cs       # Tests de integración
-│       │   └── MomentumCalculator.API.Tets.csproj 
-│       └── scripts/                      # Sicripts de automatizacion de tests
-│           └── suite_testing.sh          # Suite de tests para poder desplegras todos los test
+├── test/
+│   ├── MomentumCalculator.API.Tests/
+│   │   ├── GlobalUsings.cs
+│   │   ├── IntegrationTests.cs
+│   │   └── MomentumCalculator.API.Tets.csproj
+│   │
+│   ├── MomentumCalculator.Tests/
+│   │   └── Unit_Tests.cs
+│   │
+│   ├── scripts/
+│   │   ├── TestsResults/
+│   │   └── suite_testing.sh
+│   │
+│   └── MomentumCalculator.Tests.csproj
 │
-├── .gitignore                          # Archivos ignorados por Git
-├── LICENSE                             # Licencia MIT
-└── README.md                           # Documentación principal                         # Documentación principal         
+├── .dockerignore
+├── .gitignore
+├── dockerfile
+├── LICENSE
+├── MomentumCalculator.sln                # Solución que agrupa todos los proyectos
+└── README.md
 ``` 
 ---
 
@@ -190,15 +213,3 @@ Apasionado por el desarrollo de software, DevOps, scripting y la accesibilidad t
 
 - **GitHub**: [JesusLuis493](https://github.com/JesusLuis493)
 - **Correo Electrónico**: [jesusluis.dev@gmail.com]
-
----
-
-
-## 🚀 Ejecución
-
-Para correr el programa desde la terminal:
-
-```bash
-dotnet run
-```
-

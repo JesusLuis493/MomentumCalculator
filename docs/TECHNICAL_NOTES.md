@@ -249,8 +249,7 @@ resource "google_project_service" "artifact_registry_api" {
 }
 ``` 
 
-
-### Infrastructura
+### Recursos de infra
 - **Artifacts :**
 Uso de artifact registry para mejorar y complementar el uso de contenedores docker, aprovicionando un entorno de almacenamiento reproducible para las imagenes docker.
 
