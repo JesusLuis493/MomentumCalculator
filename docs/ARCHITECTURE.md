@@ -317,14 +317,14 @@ MomentumCalculator.Tests
 MomentumCalculator.CLI
     └─→ Referencia: MomentumCalculator.Core
 
-MomentumCalculator.API (futuro)
+MomentumCalculator.API
     └─→ Referencia: MomentumCalculator.Core
 
 MomentumCalculator.sln (Solución)
     ├─→ MomentumCalculator.Core
     ├─→ MomentumCalculator.CLI
     ├─→ MomentumCalculator.Tests
-    └─→ MomentumCalculator.API (futuro)
+    └─→ MomentumCalculator.API
 ```
 
 **Regla de Oro:** Core NO depende de nada. CLI y Tests dependen de Core.

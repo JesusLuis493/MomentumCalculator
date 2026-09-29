@@ -11,9 +11,9 @@ Este proyecto se encuentra en preparacion para dar el siguiente paso a produccio
 | Componente        | Estado      | Notas                                  |
 |-------------------|-------------|-----------------------------------------|
 | Core (lógica)     | ✅ Completo | 6 formulas fisicas + validacion de resultados|
-| CLI               | ✅ Completo | ...                                     |
+| CLI               | ✅ Completo | Simple pero funcional                   |
 | API (ASP.NET Core)| ✅ Completo | Swagger configurado                     |
-| Tests             | ✅ Completo | Cobertura 100% (dentro de la logica)|
+| Tests             | ✅ Completo | Cobertura 100% (dentro de la logica)    |
 | Docker            | 🟡 Parcial  | Imagen construida, falta probar local   |
 | Terraform / IaC   | 🟡 Parcial  | main.tf sin terminar para [proveedor]   |
 | CI/CD (deploy)    | 🔴 Pendiente| Solo build+test automatizado            |
