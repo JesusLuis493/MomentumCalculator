@@ -165,7 +165,7 @@ MomentumCalculator/
 ├── .gitignore
 ├── dockerfile
 ├── LICENSE
-├── MomentumCalculator.sln                # Solución que agrupa todos los proyectos
+├── MomentumF.sln                # Solución que agrupa todos los proyectos
 └── README.md
 ``` 
 ---
