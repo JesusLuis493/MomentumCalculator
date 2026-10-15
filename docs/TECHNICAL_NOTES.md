@@ -257,6 +257,23 @@ Uso de artifact registry para mejorar y complementar el uso de contenedores dock
 - **Cloud :**
 Hace uso de un servidor de google cloud, del tipo V2 mediante un contenedor de docker en el cual hace uso del API mediante el puerto establecido para accesar al codigo y llevar acabo las labores de CI/CD.
 
+## Dockerfile
+**Explicación del nuevo Dockerfile propuesto**
+
+### 1. Etapa 1: Compilación (**build**)
+  - **FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build**: Utiliza la imagen con el SDK completo de .NET 8 (herramientas de compilación) y la nombra `build`.
+  - **WORKDIR /src**: Define la carpeta de trabajo dentro del contenedor.
+  - **COPY src/.../\*.csproj ...**: Copia únicamente los archivos de definición de proyecto `.csproj`.
+  - **RUN dotnet restore ...**: Descarga las dependencias de NuGet. Al copiar primero solo los `.csproj`, **Docker aprovecha la caché de capas**. Si no modificas dependencias, las futuras compilaciones serán mucho más rápidas.
+  - **COPY src/ src/**: Copia el resto del código fuente tras restaurar paquetes.
+  - **RUN dotnet publish ... -o /out**: Compila la API en modo *Release* y coloca los artefactos publicados en la carpeta `/out`.
+### 2. Etapa 2: Imagen final ligera (**runtime**)
+  - **FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime**: Cambia a una imagen base que solo contiene el motor de ejecución (*runtime*) de ASP.NET 8.0, descartando el SDK pesado.
+  - **WORKDIR /app**: Define la carpeta de ejecución.
+  - **COPY --from=build /out .**: Copia exclusivamente los binarios listos de la etapa anterior hacia la imagen limpia.
+  - **USER app**: Cambia la ejecución a un **usuario sin privilegios de root (** **app** **)**, reduciendo riesgos de seguridad.
+  - **ENV ASPNETCORE\_HTTP\_PORTS=8080** **y** **EXPOSE 8080**: Establece y declara el puerto HTTP 8080 para la API.
+  - **ENTRYPOINT ["dotnet", "MomentumCalculator.API.dll"]**: Establece el comando para arrancar la aplicación al iniciar el contenedor.
 
 ---
 

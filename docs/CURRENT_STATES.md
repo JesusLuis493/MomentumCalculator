@@ -26,12 +26,13 @@ Este proyecto se encuentra en preparacion para dar el siguiente paso a produccio
 | Proveedor de nube: [Google]|24-12-2025|Free Tier|
 | Auditoria y consultoria: [Mantenimiento]|20-09-2026|Abandono general |
 | Limpieza tecnica: [bin/ obj/]|20-09-2026|Conflictos en git push|
+| Remplazo completo [Dokerfile]|29-09-2026|GAto inmenso de recursos|
 
 --- 
 
 ## 4. Problemas conocidos / deuda técnica
 - [ ] Estructuracion defisiente del contenedor docker
-- [ ] Documentacion desactualizada
+- [ ] Fallas de logica en `.dockerignore`
 - [ ] Estado dudoso del workflow
 - [ ] Abandono en `Main.tf`
 
@@ -39,11 +40,10 @@ Este proyecto se encuentra en preparacion para dar el siguiente paso a produccio
 
 ## 5. Próximos pasos
 1. Retormar trabajos en la capa de infra
-2. Auditar y revisar el `dockerfile`
-
+2. Ajuste tecnico del `.dokerignore`
 
 ## 6. Métricas rápidas
-- Commits: 82
+- Commits: 85
 - Cobertura de tests: 100%
 - Issues abiertos: 1
 - Última build en CI: ✅
