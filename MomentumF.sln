@@ -8,6 +8,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AE035870-B39
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MomentumCalculator.Core", "src\MomentumCalculator.Core\MomentumCalculator.Core.csproj", "{45100E2A-0F41-4CEC-A128-991A3F46ED85}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MomentumCalculator.API", "src\MomentumCalculator.API\MomentumCalculator.API.csproj", "{64DF9623-B3EF-4AF3-9A95-0DE087342511}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,6 +24,10 @@ Global
 		{45100E2A-0F41-4CEC-A128-991A3F46ED85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45100E2A-0F41-4CEC-A128-991A3F46ED85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45100E2A-0F41-4CEC-A128-991A3F46ED85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64DF9623-B3EF-4AF3-9A95-0DE087342511}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64DF9623-B3EF-4AF3-9A95-0DE087342511}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64DF9623-B3EF-4AF3-9A95-0DE087342511}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64DF9623-B3EF-4AF3-9A95-0DE087342511}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -31,5 +37,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{45100E2A-0F41-4CEC-A128-991A3F46ED85} = {AE035870-B39B-4389-B360-ED6C432021E8}
+		{64DF9623-B3EF-4AF3-9A95-0DE087342511} = {AE035870-B39B-4389-B360-ED6C432021E8}
 	EndGlobalSection
 EndGlobal

@@ -29,11 +29,8 @@ var app = builder.Build();
 // └─────────────────────────────────────────────────────────────┘
 
 // Si estamos en desarrollo, mostrar Swagger (interfaz visual para probar)
-if (app.Environment. IsDevelopment())
-{
     app.UseSwagger();
     app.UseSwaggerUI();
-}
 
 // Redirigir HTTP a HTTPS (seguridad)
 app.UseHttpsRedirection();
